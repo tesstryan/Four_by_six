@@ -1,0 +1,64 @@
+@media print {
+	body {
+	font-family: 'Open Sans', sans-serif;
+
+	}
+
+	a {display:none;}
+
+	nav {display:none;}
+
+
+	.quote_box {
+		height: 448px;
+		width: 592px;
+		background: #CCC;
+		border-radius: 20px;
+
+	}
+
+	.text {
+		color:white; 
+		font-size: 150px; 
+		padding: 10px; 
+		text-align: center; 
+		padding-top: 30%;
+	}
+
+	.text_over_8 {
+		color: white; 
+		font-size: 40px; 
+		padding: 10px; 
+		line-height: 45px; 
+		text-align: center; 
+		padding-top: 177px;
+		
+	}
+
+	.arrow-down_2 {
+		width: 0;
+		height: 0;
+		border-left: 30px solid transparent;
+		border-right: 30px solid transparent;
+		margin-left: 246px;
+		border-top: 22px solid #CCC; 
+		margin-top: -1px;
+	}
+
+
+	.author {
+		margin-top: 5px; 
+		color: #ccc; 
+		font-size:15px; 
+		width: 100px; 
+		text-align: center;
+		margin-left: 246px;
+	}
+
+	.export_to_pdf {
+		margin-top: 3%;
+		color: #6b9eb4;
+	}
+
+
+}

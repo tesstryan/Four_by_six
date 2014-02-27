@@ -1,0 +1,22 @@
+<h1>Editing Quote #<%= @quote.id %></h1>
+
+<%= form_tag(quote_url(@quote), method: 'patch') do %>
+  <div>
+    <%= label_tag :content %><br />
+    <%= text_area_tag :content, @quote.content %>
+  </div>
+
+  <div>
+    <%= label_tag :author %><br />
+    <%= text_field_tag :author, @quote.author %>
+  </div>
+
+  <div>
+    <%= label_tag :user_id %><br />
+    <%= number_field_tag :user_id, @quote.user_id %>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Quote" %>
+  </div>
+<% end %>

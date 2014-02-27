@@ -1,0 +1,22 @@
+<h1>New Quote</h1>
+
+<%= form_tag(quotes_url, method: 'post') do %>
+  <div>
+    <%= label_tag :content %><br />
+    <%= text_area_tag :content %>
+  </div>
+
+  <div>
+    <%= label_tag :author %><br />
+    <%= text_field_tag :author %>
+  </div>
+
+  <div>
+    <%= label_tag :user_id %><br />
+    <%= number_field_tag :user_id %>
+  </div>
+
+  <div>
+    <%= submit_tag "Create Quote" %>
+  </div>
+<% end %>
