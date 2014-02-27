@@ -8,20 +8,36 @@
 </head>
 <body>
 
-
-
 	 <p class="notice"><%= notice %></p>
 	 <p class="alert"><%= alert %></p>
-	 <% if user_signed_in? %>
-	  Logged in as <strong><%= current_user.email %></strong>.
-	  <%= link_to 'Edit profile', edit_user_registration_path %> |
-	  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-	<% else %>
-	  <%= link_to "Sign up", new_user_registration_path %> |
-	  <%= link_to "Login", new_user_session_path %>
-	<% end %>
+
+	 <div class="wrap">
+    <nav>
+        <%= link_to "Four by Six", root_url, class: "nav_logo" %>
+        <a href="#" class="nav_link nav_offset">Create your Own</a>
+        <a href="#" class="nav_link">Our Story</a>
+        
+        <% if user_signed_in? %>
+			<%= link_to 'Edit profile', edit_user_registration_path, class: "nav_link" %> 
+			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_link" %>
+		<% else %>
+			<%= link_to "Sign up", new_user_registration_path, class: "nav_link" %>
+			<%= link_to "Login", new_user_session_path, class: "nav_link"%>
+		<% end %>
+    </nav>
+
+
+
 	<%= yield %>
 
+    <footer>
+        <a href="#" class="nav_logo">Four by Six © 2014 </a>
+        <a href="#" class="nav_link nav_offset">Terms of Use</a>
+        <a href="#" class="nav_link">Privacy Notice</a>
+        <a href="#" class="nav_link">Contact</a>  
+    </footer>
+
+</div>
 
 </body>
 </html>
