@@ -11,43 +11,38 @@
 </head>
 <body>
 
-	 <p class="notice"><%= notice %></p>
-	 <p class="alert"><%= alert %></p>
+	<div class="top_nav_color">
+		 
+		 <div class="wrap">
+	    	<nav>
+		        <a href="/" class="nav_logo">four<span class="logo_bold">by</span>six</a>
 
-	 <div class="wrap">
-    <nav>
-        <a href="/" class="nav_logo">four<span class="logo_bold">by</span>six</a>
+		        <%= link_to "Create Your Own", root_url, class: "nav_link nav_offset" %>
+		        <%= link_to "Our Story", root_url, class: "nav_link" %>
+		        
+		        <% if user_signed_in? %>
+					<%= link_to 'My profile', current_user, class: "nav_link" %> 
+					<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_link" %>
+				<% else %>
+					<%= link_to "Sign up", new_user_registration_path, class: "nav_link" %>
+					<%= link_to "Login", new_user_session_path, class: "nav_link"%>
+				<% end %>
+	    	</nav>
 
-        <%= link_to "Create Your Own", root_url, class: "nav_link nav_offset" %>
-        <%= link_to "Our Story", root_url, class: "nav_link" %>
-        
-        <% if user_signed_in? %>
-			<%= link_to 'My profile', current_user, class: "nav_link" %> 
-			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_link" %>
-		<% else %>
-			<%= link_to "Sign up", new_user_registration_path, class: "nav_link" %>
-			<%= link_to "Login", new_user_session_path, class: "nav_link"%>
-		<% end %>
+			<%= yield %>
+		
+		</div>
+		
+	</div>
 
-
-    </nav>
-
-
-	<%= yield %>
-
-
-    <footer>
+<!--     <footer>
     	<a href="#" class="nav_link">Terms of Use</a>
         <a href="#" class="nav_link">Privacy Notice</a>
         <a href="#" class="nav_link">Contact</a> 
         <a href="#" class="nav_logo nav_offset">Four by Six © 2014 </a>
- 
-    </footer>
+    </footer> -->
 
 
-    
-
-</div>
 
 </body>
 </html>

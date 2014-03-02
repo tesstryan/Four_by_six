@@ -6,8 +6,20 @@ $gutter_width: 15px;
 $col_count: 16;
 $gutter_count: $col_count - 1;
 $total_gutter_width: $gutter_count * $gutter_width;
-
 $col_width: ($max_width - $total_gutter_width) / $col_count;
+
+
+// Color Variables 
+$seafoam_nav: rgb(232, 245, 242);
+$seafoam_dark: darken(rgb(232, 245, 242), 40%);
+
+$blue: rgb(161,213,214);
+$lightgray: rgb(236,236,233);
+$darkgray: rgb(204,203,203);
+$yellow: rgb(251,207,89);
+$red: rgb(222,90,65);
+$green: rgb(192, 225, 192);
+
 
 // Global templates
 
@@ -23,19 +35,9 @@ $col_width: ($max_width - $total_gutter_width) / $col_count;
     // background:#bbb;
 }
 
-// Global tags
-
-body {
-    
-
-}
-
-
-// Everything else
-
 .wrap {
     @extend %container;
-    padding: 20px 0;
+    // padding: 20px 0;
     font-family: 'Lato', sans-serif;
 }
 
@@ -47,34 +49,48 @@ body {
     margin-left: ($col_width + $gutter_width) * $num_cols;
 }
 
+// Everything Else
+
+// Navigation Styling 
+
+.top_nav_color {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(232, 245, 242);
+}
+
 nav {
     font-size: 0;
     margin-bottom: 40px;
-    margin-top: 5px;
-    // background-color: rgb(237, 237, 234)
+    margin-top: 0px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+
+    // background-color: rgb(237, 237, 234);
 
 
     .nav_logo {
-        font-size: 40px;
+        font-size: 28px;
         @include columnify (3);
         text-align: left;
         font-weight: 400;
         text-transform: lowercase;
+        letter-spacing: 3px;
 
         .logo_bold {
             font-weight: 300;
         }
 
         &:hover {
-            color: black;
+            color: darken(rgb(232, 245, 242), 40%);
+            background-color:rgb(232, 245, 242);
         }
         
     }
 
-
-
     .nav_offset {
-        @include offset(1);
+        @include offset(4);
+        @include columnify(3);
     }
 
     a {
@@ -82,19 +98,28 @@ nav {
         text-transform: lowercase;
         text-decoration: none;
         display: inline-block;
-        color: black;
-        background:white;
+        color: darken(rgb(232, 245, 242), 40%);
+        margin-bottom: 8px;
+        padding: 5px;
+        // background:white;
         text-transform: uppercase;
         font-size: 13px;
-        @include columnify(3);
+        @include columnify(2);
         margin-right: $gutter_width;
-        text-align: right;
+        text-align: center;
             &:hover {
                 text-decoration: none;
-                color: orange;
+                background-color: darken(rgb(232, 245, 242), 40%);
+                color: white;
+                padding: 5px;
             }
             &:visited {
                 text-decoration: none;
+            }
+            &:active {
+                text-decoration: none;
+                background-color: rgb(237, 237, 234); 
+                padding: 5px;
             }
             &:nth-of-type(5n) {
                 margin-right: 0;
@@ -137,22 +162,118 @@ footer {
     }
 }
 
-// Start sign in styling
+// End Navigation Styling
 
-.form_layout {
-      margin: 0 auto;
-      background-color: #ecf0f1;
-      border-radius: 2px;
-      margin-top: 50px;
-      padding: 20px 40px;
+// Homepage Styling
+
+.layout_one {
+    font-size: 0;
+
+        div {
+                &:nth-of-type(3n) {
+                    margin-right: 0;
+                }
+            } 
     
 
-      h2 {font-size: 40px;}
+        .left_side {
+            @include columnify(4);
+            margin-right: $gutter_width;
+            margin-bottom: 20px;
+            height: 200px;
+            background:white;
+            box-shadow: 0 0 2px fade-out(black,.4);
+            display: inline-block;
+            }
+        
+        .middle {
+            @include columnify(8);
+            margin-right: $gutter_width;
+            margin-bottom: 20px;
+            height: 200px;
+            background:white;
+            box-shadow: 0 0 2px fade-out(black,.4);
+            display: inline-block;
+            }   
 
-      input {
+        .right_side {
+            @include columnify(4);
+            margin-right: $gutter_width;
+            margin-bottom: 20px;
+            height: 200px;
+            background:white;
+            box-shadow: 0 0 2px fade-out(black,.4);
+            display: inline-block;
+            }
+           
+}
 
-      }
+// End Homepage Styling
+
+// Start sign in styling
+
+.form {
+    .form_layout {
+          font-size: 15px;
+          margin: 0 auto;
+          border: 2px solid $lightgray;
+          border-radius: 2px;
+          margin-top: 50px;
+          padding: 20px 40px;
+          width: 350px;
+          height: 325px;
+          text-align: center;
+        
+
+        h2 {font-size: 40px;
+            background-color: white;
+            color: $darkgray;
+            margin-top: -43px;
+            width: 175px;
+            text-align: center;
+
+        }
+
+        .sign_input {
+            margin-top: 20px;
+
+            .sign_text {
+                line-height: 20px;
+                padding-bottom: 15px;
+                color: $seafoam_dark;
+            }
+
+            .box_input {
+                width: 200px;
+                height: 30px;
+            }
+
+            div{
+                margin-bottom: 15px;
+                font-size: 13px;
+            }
+
+            .sign_button {
+                color: white; 
+                background-color: $seafoam_dark;
+                padding: 10px;
+                padding-right: 20px;
+                padding-left: 20px;
+                outline: 0;
+                border: 0;
+
+                &:hover {
+                    background-color: darken($seafoam_dark, 10%)
+                }
+            }
+
+            .other_text {
+                font-size: 13px;
+                line-height: 15px;
+            }
+        }   
     }
+}
 
 // End sign in form style 
 
@@ -316,175 +437,7 @@ footer {
 
 // End profile page styling
 
-.layout_one {
-    font-size: 0;
 
-        div {
-                &:nth-of-type(3n) {
-                    margin-right: 0;
-                }
-            } 
-    
-
-        .left_side {
-            @include columnify(4);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            height: 200px;
-            background:white;
-            box-shadow: 0 0 2px fade-out(black,.4);
-            display: inline-block;
-            }
-        
-        .middle {
-            @include columnify(8);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            height: 200px;
-            background:white;
-            box-shadow: 0 0 2px fade-out(black,.4);
-            display: inline-block;
-            }   
-
-        .right_side {
-            @include columnify(4);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            height: 200px;
-            background:white;
-            box-shadow: 0 0 2px fade-out(black,.4);
-            display: inline-block;
-            }
-           
-}
-
-.layout_two {
-    font-size: 0;
-
-        div {
-                &:nth-of-type(3n) {
-                    margin-right: 0;
-                }
-            } 
-    
-
-        .left_side {
-            @include columnify(3);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            height: 200px;
-            background:white;
-            box-shadow: 0 0 2px fade-out(black,.4);
-            display: inline-block;
-            }
-        
-        .middle {
-            @include columnify(10);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            height: 200px;
-            background:white;
-            box-shadow: 0 0 2px fade-out(black,.4);
-            display: inline-block;
-            }   
-
-        .right_side {
-            @include columnify(3);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            height: 200px;
-            background:white;
-            box-shadow: 0 0 2px fade-out(black,.4);
-            display: inline-block;
-            }
-           
-}
-
-.layout_three {
-    font-size: 0;
-
-        div {
-                &:nth-of-type(3n) {
-                    margin-right: 0;
-                }
-            } 
-    
-
-        .left_side {
-            @include columnify(3);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            height: 200px;
-            background:white;
-            box-shadow: 0 0 2px fade-out(black,.4);
-            display: inline-block;
-            }
-        
-        .middle {
-            @include columnify(10);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            height: 200px;
-            background:white;
-            box-shadow: 0 0 2px fade-out(black,.4);
-            display: inline-block;
-            }   
-
-        .right_side {
-            @include columnify(3);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            height: 200px;
-            background:white;
-            box-shadow: 0 0 2px fade-out(black,.4);
-            display: inline-block;
-            }
-           
-}
-
-.layout_three_equal {
-    font-size: 0;
-    @include offset(0.5);
-
-        div {   
-                
-                &:nth-of-type(3n) {
-                    margin-right: 0;
-                }
-            } 
-    
-
-        .left_side {
-            @include columnify(5);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            height: 200px;
-            background:white;
-            box-shadow: 0 0 2px fade-out(black,.4);
-            display: inline-block;
-            }
-        
-        .middle {
-            @include columnify(5);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            height: 200px;
-            background:white;
-            box-shadow: 0 0 2px fade-out(black,.4);
-            display: inline-block;
-            }   
-
-        .right_side {
-            @include columnify(5);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            height: 200px;
-            background:white;
-            box-shadow: 0 0 2px fade-out(black,.4);
-            display: inline-block;
-            }
-           
-}
 
 
 
