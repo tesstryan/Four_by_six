@@ -1,10 +1,23 @@
-<h1>User #<%= @user.id %></h1>
+	<section class="profile_layout">
+		<div class="welcome_text">
+			<h2>hello <%= @user.first_name %>,</h2>
+		</div>
+	</section>
 
-<dl>
-  <dt>First name</dt>
-  <dd><%= @user.first_name %></dd>
+	<section class="profile_layout">
+		<div class="gallery_text">
+			<h2>welcome to your gallery</h2>
+		</div>
+	</section>
 
-  <dt>Last name</dt>
-  <dd><%= @user.last_name %></dd>
+    <section class="profile_layout">
+    	<ul>
+    		<% @user.quotes.each do |quote| %>
+	        <li>
+				<%= quote.content %>
+	        </li>
+	        <% end %>
+	
+        </ul>
+    </section>
 
-</dl>

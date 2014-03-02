@@ -1,30 +1,91 @@
-<h1>Quotes</h1>
+<div class="create_your_own">
+  
+  <h2>Create your own.</h2>
 
-<p><%= link_to 'Add a New Quote', new_quote_url %></p>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th>Author</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-  <% @quotes.each do |quote| %>
-    <tr>
-      <td><%= quote.content %></td>
-      <td><%= quote.author %></td>
-      <td><%= quote.user_id %></td>
-      <td><%= link_to 'Show', quote_url(quote) %></td>
-      <td><%= link_to 'Edit', edit_quote_url(quote) %></td>
-      <td><%= link_to 'Destroy', quote_url(quote), method: 'delete', data: { confirm: "Do you really want to delete this quote?" } %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<section class="layout">
+
+  <div class="left_half">
+
+    <h4 class="option_header one">Choose template</h4>
+    <ul>
+      <li class="template"><img src="/assets/example.jpg" alt="" class="template_image"></li>
+      <li class="template"><img src="/assets/example.jpg" alt="" class="template_image"></li>
+      <li class="template"><img src="/assets/example.jpg" alt="" class="template_image"></li>
+      <li class="template"><img src="/assets/example.jpg" alt="" class="template_image"></li>
+      <li class="template"><img src="/assets/example.jpg" alt="" class="template_image"></li>
+      <li class="template"><img src="/assets/example.jpg" alt="" class="template_image"></li>
+    </ul>
+    <h4 class="option_header color">Choose color</h4> 
+      <ul>
+        <li class="color_orange"></li>
+        <li class="color_red"></li>
+        <li class="color_seafoam"></li>
+        <li class="color_aqua"></li>
+      </ul>
+    <h4 class="option_header">Text:</h4>
+    <%= form_tag(quotes_url, method: 'post') do %>
+      <div>
+        <%= text_area_tag :content, nil, placeholder: "Words of wisdom go here...", class: "input_quote" %>
+      </div>
+
+<!--       <div>
+        <%= text_field_tag :author, nil, placeholder: "Author", class: "input" %>
+      </div>
+
+      <div>
+        <%= number_field_tag :user_id, nil, class: "input" %>
+      </div> -->
+
+      <div>
+        <%= submit_tag "Create card", class: "create_card_button" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="right_half">
+
+<% if @quote.present? %>
+
+<div class="card_outline">
+  
+  <div class="quote_box">
+    
+    <% current_quote = @quote.content %>
+    <% if current_quote.length <= 8 %>
+      <div class="text">
+        <i class="fa fa-quote-left"></i><%= @quote.content %><i class="fa fa-quote-right"></i>
+    <% else %>
+      <div class="text_over_8">
+        <i class="fa fa-quote-left"></i><%= @quote.content %><i class="fa fa-quote-right"></i>
+    <% end %>
+    </div>
+
+  </div>
+
+  
+<!-- DOWN ARROW AND AUTHOR -->
+  <div class="arrow-down_2">
+  </div>
+  <div class="author">
+    <%= @quote.author %>
+  </div> 
+    
+</div>
+
+<%= link_to "Export to PDF", download_quote_url(:quote => @quote, format: 'pdf', :class => "export_to_pdf") %>
+
+
+
+  </div>
+
+<% else %>
+
+<h3> start creating your masterpiece on the left </h3>
+
+<% end %>
+
+</section>
 

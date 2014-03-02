@@ -1,8 +1,11 @@
 class QuotesController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show, :new, :create, :download]
+  
 
   def index
     @quotes = Quote.all
+    # @quote = Quote.find_by(id: params[:id])
+    @quote = Quote.last
   end
 
   def show
