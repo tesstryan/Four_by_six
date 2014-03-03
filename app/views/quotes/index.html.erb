@@ -17,17 +17,13 @@
 
     <h4 class="option_header one">Choose template</h4>
 <!-- Radio buttons for templates -->
-<!--       <input id="template_america" name="template" type="radio" value="america" />
-      <label for="template_america"><img src="/assets/example.jpg" alt="" class="template_image"></label>
-      <input id="template_circle" name="template" type="radio" value="circle" />
-      <label for="template_circle"><img src="/assets/example.jpg" alt="" class="template_image"></label> -->
 
     <ul>
       <li class="template"><%= radio_button_tag("template", "america") %>
       <%= label_tag(:template, "America") %></li>
-      <li class="template"><%= radio_button_tag("template", "circle") %>
-      <%= label_tag(:template, "Circle") %></li>
-      <li class="template"><%= radio_button_tag("template", "rails") %>
+      <li class="template"><%= radio_button_tag("template", "quote") %>
+      <%= label_tag(:template, "Quote") %></li>
+      <li class="template"><%= radio_button_tag("template", "america") %>
       <%= label_tag(:template, "America") %></li>
       <li class="template"><%= radio_button_tag("template", "java") %>
       <%= label_tag(:template, "America") %></li>
@@ -43,7 +39,7 @@
     <ul>
       <li class="color_red"><%= radio_button_tag(:color, "red") %></li>
       <li class="color_yellow"><%= radio_button_tag(:color, "yellow") %></li>
-      <li class="color_seafoam"><%= radio_button_tag(:color, "seafoam") %></li>
+      <li class="color_green"><%= radio_button_tag(:color, "green") %></li>
       <li class="color_aqua"><%= radio_button_tag(:color, "aqua") %></li>
     </ul>
 
@@ -54,12 +50,8 @@
       </div>
 
 <!--       <div>
-        <%= text_field_tag :author, nil, placeholder: "Author", class: "input" %>
-      </div>
-
-      <div>
         <%= number_field_tag :user_id, nil, class: "input" %>
-      </div> -->
+      </div>  -->
 
       <div>
         <%= submit_tag "Create card", class: "create_card_button" %>
@@ -70,7 +62,20 @@
   <div class="right_half">
     <div class="card_box">
       <% if @quote.present? %>
-           <h3 class="start_creating"> start creating your masterpiece</h3>
+          <div class="card_outline">
+  
+            <div class="<%= @quote.template %> offset">
+
+              <div class="<%= @quote.color %> text_over_8">
+                <% current_quote = simple_format(@quote.content) %>
+                <%= current_quote %>
+             </div>  
+
+            </div>  
+
+  </div>
+
+<%= link_to "Export to PDF", download_quote_url(:quote => @quote, format: 'pdf', :class => "export_to_pdf") %>
 
       <% else %>
 

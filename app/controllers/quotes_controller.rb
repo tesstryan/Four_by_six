@@ -3,9 +3,9 @@ class QuotesController < ApplicationController
   
 
   def index
-    @quotes = Quote.all
+    # @quotes = Quote.all
     # @quote = Quote.find_by(id: params[:id])
-    @quote = Quote.last
+    @quote = Quote.find_by(id: params[:id])
   end
 
   def show
@@ -24,7 +24,7 @@ class QuotesController < ApplicationController
     @quote.user_id = params[:user_id]
 
     if @quote.save
-      redirect_to quotes_url, notice: "Quote created successfully."
+      redirect_to quotes_url
     else
       render 'new'
     end
@@ -43,7 +43,7 @@ class QuotesController < ApplicationController
     @quote.user_id = params[:user_id]
 
     if @quote.save
-      redirect_to quotes_url, notice: "Quote updated successfully."
+      redirect_to quotes_url
     else
       render 'edit'
     end
