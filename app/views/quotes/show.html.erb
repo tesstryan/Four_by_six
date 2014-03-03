@@ -1,29 +1,23 @@
 
 <div class="card_outline">
 	
-	<div class="quote_box">
-		
-		<% current_quote = @quote.content %>
-		<% if current_quote.length <= 8 %>
-			<div class="text">
-				<i class="fa fa-quote-left"></i><%= @quote.content %><i class="fa fa-quote-right"></i>
-		<% else %>
-			<div class="text_over_8">
-				<i class="fa fa-quote-left"></i><%= @quote.content %><i class="fa fa-quote-right"></i>
-		<% end %>
-		</div>
+	<div class="<%= @quote.template %> offset">
 
-	</div>
+		<div class="<%= @quote.color %> text_over_8">
+			<% current_quote = simple_format(@quote.content) %>
+			<%= current_quote %>
+
+		</div>	
+
+	</div>	
+
+</div>
 
 	
-<!-- DOWN ARROW AND AUTHOR -->
-	<div class="arrow-down_2">
-	</div>
-	<div class="author">
-		<%= @quote.author %>
-	</div> 
-		
-</div>
+
+
+
+
 
 <%= link_to "Export to PDF", download_quote_url(:quote => @quote, format: 'pdf', :class => "export_to_pdf") %>
 

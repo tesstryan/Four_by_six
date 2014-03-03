@@ -1,0 +1,526 @@
+@import "library";
+@import "reset";
+
+$max_width: 960px;
+$gutter_width: 15px;
+$col_count: 16;
+$gutter_count: $col_count - 1;
+$total_gutter_width: $gutter_count * $gutter_width;
+$col_width: ($max_width - $total_gutter_width) / $col_count;
+
+
+// Color Variables 
+$seafoam_nav: rgb(232, 245, 242);
+$seafoam_dark: darken(rgb(232, 245, 242), 50%);
+
+$blue: rgb(161,213,214);
+$lightgray: rgb(236,236,233);
+$darkgray: rgb(204,203,203);
+$yellow: rgb(251,207,89);
+$red: rgb(222,90,65);
+$green: rgb(192, 225, 192);
+
+
+// Global templates
+
+%group:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+%container {
+    margin: 0 auto;
+    max-width: $max_width;
+    // background:#bbb;
+}
+
+body {
+    background-color: white;
+}
+
+.wrap {
+    @extend %container;
+    // padding: 20px 0;
+    font-family: 'Lato', sans-serif;
+}
+
+@mixin columnify($num_cols) {
+    width: $col_width * $num_cols + $gutter_width * ($num_cols - 1);
+}
+
+@mixin offset($num_cols) {
+    margin-left: ($col_width + $gutter_width) * $num_cols;
+}
+
+// Everything Else
+
+// Navigation Styling 
+
+.top_nav_color {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+}
+
+nav {
+    font-size: 0;
+    margin-bottom: 40px;
+    margin-top: 5px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+
+    // background-color: rgb(237, 237, 234);
+
+
+    .nav_logo {
+        font-size: 28px;
+        @include columnify (3);
+        text-align: left;
+        font-weight: 400;
+        text-transform: lowercase;
+        letter-spacing: 3px;
+
+        .logo_bold {
+            font-weight: 300;
+        }
+
+        &:hover {
+            color: darken(rgb(232, 245, 242), 40%);
+            background-color:rgb(232, 245, 242);
+        }
+        
+    }
+
+    .nav_offset {
+        @include offset(4);
+        @include columnify(3);
+    }
+
+    a {
+        font-weight: 300;
+        text-transform: lowercase;
+        text-decoration: none;
+        display: inline-block;
+        color: darken(rgb(232, 245, 242), 40%);
+        margin-bottom: 8px;
+        padding: 5px;
+        // background:white;
+        text-transform: uppercase;
+        font-size: 13px;
+        @include columnify(2);
+        margin-right: $gutter_width;
+        text-align: center;
+            &:hover {
+                text-decoration: none;
+                background-color: darken(rgb(232, 245, 242), 40%);
+                color: white;
+                padding: 5px;
+            }
+            &:visited {
+                text-decoration: none;
+            }
+            &:active {
+                text-decoration: none;
+                background-color: rgb(237, 237, 234); 
+                padding: 5px;
+            }
+            &:nth-of-type(5n) {
+                margin-right: 0;
+            }       
+    }
+}
+
+footer {
+    font-size: 0;
+    border-top: 1px solid black;
+
+    .nav_offset {
+        @include offset(7);
+    }
+
+    .nav_logo {
+        @include columnify(3);
+        text-align: right;
+    }
+
+    a {
+        margin-top: 8px;
+        text-decoration: none;
+        display: inline-block;
+        background:white;
+        font-size: 10px;
+        @include columnify(2);
+        margin-right: $gutter_width;
+        text-align: left;
+            &:hover {
+                text-decoration: none;
+                color: blue;
+            }
+            &:visited {
+                text-decoration: none;
+            }
+            &:nth-of-type(4n) {
+                margin-right: 0;
+            }        
+    }
+}
+
+// End Navigation Styling
+
+// Homepage Styling
+
+.layout_one {
+    font-size: 0;
+
+        div {
+                &:nth-of-type(3n) {
+                    margin-right: 0;
+                }
+            } 
+    
+
+        .left_side {
+            @include columnify(4);
+            margin-right: $gutter_width;
+            margin-bottom: 20px;
+            height: 200px;
+            background:white;
+            box-shadow: 0 0 2px fade-out(black,.4);
+            display: inline-block;
+            }
+        
+        .middle {
+            @include columnify(8);
+            margin-right: $gutter_width;
+            margin-bottom: 20px;
+            height: 200px;
+            background:white;
+            box-shadow: 0 0 2px fade-out(black,.4);
+            display: inline-block;
+            }   
+
+        .right_side {
+            @include columnify(4);
+            margin-right: $gutter_width;
+            margin-bottom: 20px;
+            height: 200px;
+            background:white;
+            box-shadow: 0 0 2px fade-out(black,.4);
+            display: inline-block;
+            }
+           
+}
+
+// End Homepage Styling
+
+// Start sign in styling
+
+.form {
+    .form_layout {
+          font-size: 15px;
+          margin: 0 auto;
+          border: 2px solid $darkgray;
+          border-radius: 2px;
+          margin-top: 80px;
+          padding: 20px 40px;
+          width: 350px;
+          height: 325px;
+          text-align: center;
+        
+
+        h2 {font-size: 40px;
+            background-color: $seafoam_nav;
+            color: $darkgray;
+            margin-top: -43px;
+            width: 175px;
+            text-align: center;
+          
+
+        }
+
+        .sign_input {
+            margin-top: 20px;
+
+            .sign_text {
+                line-height: 20px;
+                padding-bottom: 15px;
+                color: $seafoam_dark;
+            }
+
+            .box_input {
+                width: 200px;
+                height: 30px;
+            }
+
+            div{
+                margin-bottom: 15px;
+                font-size: 13px;
+            }
+
+            .sign_button {
+                color: white; 
+                background-color: $seafoam_dark;
+                padding: 10px;
+                padding-right: 20px;
+                padding-left: 20px;
+                outline: 0;
+                border: 0;
+
+                &:hover {
+                    background-color: darken($seafoam_dark, 10%)
+                }
+            }
+
+            .other_text {
+                font-size: 13px;
+                line-height: 15px;
+            }
+        }   
+    }
+}
+
+// End sign in form style 
+
+// Quote page styling
+
+.create_your_own {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.layout {
+    font-size: 0;
+    @include offset(1);
+        
+    div {
+            &:nth-of-type(2n) {
+                margin-right: 0;
+                vertical-align: top;
+            }
+        } 
+
+    .left_half {
+        @include columnify(5);
+        margin-right: $gutter_width;
+        margin-bottom: 20px;
+        font-size: 15px;
+        display: inline-block;
+        height: 438px;
+        // background-color: pink;
+    }
+
+    .right_half {
+        @include columnify(9);
+        margin-right: $gutter_width;
+        margin-bottom: 20px;
+        font-size: 15px;
+        display: inline-block;
+        // background-color: pink;
+
+        .card_box {
+            background-color: white;
+            // margin-right: $gutter_width;
+            height: 438px;
+            width: 582px;
+            
+
+            .start_creating {
+                text-align: center;
+                padding: 10%;
+                padding-top: 25%;
+                font-size: 50px;
+                color: $blue;
+            }
+
+        }
+
+
+    }
+}
+
+    // Left Side
+
+
+.input_quote {
+    width: 230px;
+    max-width: 230px;
+    height: 100px;
+    padding: 5px;
+    font-size: 13px;
+    border-radius: 2px;
+    border: 1px gray solid;
+}
+
+.input {
+    width: 200px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 5px;
+    font-size: 13px;
+    // border-radius: 5px;
+    border: 1px gray solid;
+    color: black;
+}
+
+.create_card_button {
+    color: white; 
+    background-color: darken($darkgray, 20%);
+    padding: 8px;
+    outline: 0;
+    border: 0;
+    margin-top: 20px;
+
+    &:hover {
+       background-color: darken($darkgray, 50%); 
+    }
+
+}
+
+.option_header {
+    font-style: italic; 
+    font-size: 15px;
+    color: darken($darkgray, 50%);
+    margin-bottom: 6px;
+    margin-top: 15px;
+}
+
+.one {
+    margin-top: 0px;
+}
+
+.template {
+    display: inline-block;
+}
+
+.template_image {
+    width: 75px;
+    border: 1px solid lightgray;
+}
+
+ li {display: inline-block;}
+
+    .color_yellow {
+        width: 50px; 
+        height: 50px;    
+        background-color: $yellow;
+        padding-right: 5px;
+    }
+
+    .color_red {
+        width: 50px; 
+        height: 50px;     
+        background-color: $red;
+    }
+
+    .color_green {
+        width: 50px; 
+        height: 50px;     
+        background-color: $green;
+    }
+
+    .color_aqua {
+        width: 50px; 
+        height: 50px;     
+        background-color: $blue;
+    }
+
+// End quote page styling
+
+
+// Profile page styling
+
+.profile_layout {
+    font-size: 0;
+    @include offset(2);
+
+
+        .welcome_text {
+            font-size: 30px;
+        }
+
+        .gallery_text {
+            font-size: 30px;
+            @include columnify(12);
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        div {
+                &:nth-of-type(4n) {
+                    margin-right: 0;
+                }
+            } 
+    
+
+        li {
+            @include columnify(3);
+            margin-right: $gutter_width;
+            margin-bottom: 20px;
+            font-size: 20px;
+            background:white; 
+            display: inline-block;
+            } 
+           
+}
+
+// End profile page styling
+
+
+// Show page
+
+.america { background: url("/assets/america.jpg") no-repeat;
+    height: 288px;
+    width: 432px;
+    border: 1px solid lightgray;
+}
+
+// .offset {
+//     @include offset(4);
+// }
+
+.quote {
+    background: url("/assets/quotes_blue.jpg") no-repeat;
+    height: 288px;
+    width: 432px;
+    border: 1px solid lightgray;
+}
+
+.text {
+    color:white; 
+    font-size: 150px; 
+    padding: 10px; 
+    text-align: center; 
+    padding-top: 30%;
+}
+
+.text_over_8 {
+    color: white; 
+    font-size: 40px; 
+    padding: 10px; 
+    line-height: 45px; 
+    text-align: center;
+    width: 400px; 
+    padding-top: 15%;
+    
+} 
+
+.red {
+    color: $red;
+}
+
+.aqua {
+    color: $blue;
+}
+
+.yellow {
+    color: $yellow;
+}
+
+.green {
+    color: $green;
+}
+
+

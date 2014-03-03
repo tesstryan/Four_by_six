@@ -1,7 +1,11 @@
 class QuotesController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show, :new, :create, :download]
+  
 
   def index
-    @quotes = Quote.all
+    # @quotes = Quote.all
+    # @quote = Quote.find_by(id: params[:id])
+    @quote = Quote.find_by(id: params[:id])
   end
 
   def show
@@ -14,11 +18,13 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new
     @quote.content = params[:content]
+    @quote.template = params[:template]
+    @quote.color = params[:color]
     @quote.author = params[:author]
     @quote.user_id = params[:user_id]
 
     if @quote.save
-      redirect_to quotes_url, notice: "Quote created successfully."
+      redirect_to quotes_url
     else
       render 'new'
     end
@@ -31,11 +37,13 @@ class QuotesController < ApplicationController
   def update
     @quote = Quote.find_by(id: params[:id])
     @quote.content = params[:content]
+    @quote.template = params[:template]
+    @quote.color = params[:color]      
     @quote.author = params[:author]
     @quote.user_id = params[:user_id]
 
     if @quote.save
-      redirect_to quotes_url, notice: "Quote updated successfully."
+      redirect_to quotes_url
     else
       render 'edit'
     end
