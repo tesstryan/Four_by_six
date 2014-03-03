@@ -18,6 +18,8 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new
     @quote.content = params[:content]
+    @quote.template = params[:template]
+    @quote.color = params[:color]
     @quote.author = params[:author]
     @quote.user_id = params[:user_id]
 
@@ -35,6 +37,8 @@ class QuotesController < ApplicationController
   def update
     @quote = Quote.find_by(id: params[:id])
     @quote.content = params[:content]
+    @quote.template = params[:template]
+    @quote.color = params[:color]      
     @quote.author = params[:author]
     @quote.user_id = params[:user_id]
 

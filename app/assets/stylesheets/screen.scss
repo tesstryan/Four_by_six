@@ -218,7 +218,7 @@ footer {
           margin: 0 auto;
           border: 2px solid $lightgray;
           border-radius: 2px;
-          margin-top: 50px;
+          margin-top: 80px;
           padding: 20px 40px;
           width: 350px;
           height: 325px;
@@ -288,7 +288,7 @@ footer {
 
 .layout {
     font-size: 0;
-
+    @include offset(1);
         
     div {
             &:nth-of-type(2n) {
@@ -303,23 +303,45 @@ footer {
         margin-bottom: 20px;
         font-size: 15px;
         display: inline-block;
+        height: 438px;
         // background-color: pink;
     }
 
     .right_half {
-        @include columnify(11);
+        @include columnify(9);
         margin-right: $gutter_width;
         margin-bottom: 20px;
         font-size: 15px;
         display: inline-block;
         // background-color: pink;
+
+        .card_box {
+           
+            // margin-right: $gutter_width;
+            height: 438px;
+            width: 582px;
+            border: 1px $darkgray solid;
+
+            .start_creating {
+                text-align: center;
+                padding: 10%;
+                padding-top: 25%;
+                font-size: 50px;
+                color: $blue;
+            }
+
+        }
+
+
     }
 }
 
+    // Left Side
+
 
 .input_quote {
-    width: 200px;
-    max-width: 200px;
+    width: 230px;
+    max-width: 230px;
     height: 100px;
     padding: 5px;
     font-size: 13px;
@@ -340,18 +362,22 @@ footer {
 
 .create_card_button {
     color: white; 
-    background-color: orange;
+    background-color: darken($darkgray, 20%);
     padding: 8px;
     outline: 0;
     border: 0;
     margin-top: 20px;
+
+    &:hover {
+       background-color: darken($darkgray, 50%); 
+    }
 
 }
 
 .option_header {
     font-style: italic; 
     font-size: 15px;
-    color: orange;
+    color: darken($darkgray, 50%);
     margin-bottom: 6px;
     margin-top: 15px;
 }
@@ -371,29 +397,29 @@ footer {
 
  li {display: inline-block;}
 
-    .color_orange {
+    .color_yellow {
         width: 50px; 
         height: 50px;    
-        background-color: rgb(162, 214, 215);
+        background-color: $yellow;
         padding-right: 5px;
     }
 
     .color_red {
         width: 50px; 
         height: 50px;     
-        background-color: rgb(162, 214, 215);
+        background-color: $red;
     }
 
     .color_seafoam {
         width: 50px; 
         height: 50px;     
-        background-color: rgb(162, 214, 215);
+        background-color: $green;
     }
 
     .color_aqua {
         width: 50px; 
         height: 50px;     
-        background-color: rgb(162, 214, 215);
+        background-color: $blue;
     }
 
 // End quote page styling

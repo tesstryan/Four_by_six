@@ -7,26 +7,48 @@
 
 <section class="layout">
 
+  <div class="left_left">
+    
+
+  </div>
+
   <div class="left_half">
+    <%= form_tag(quotes_url, method: 'post') do %>
 
     <h4 class="option_header one">Choose template</h4>
+<!-- Radio buttons for templates -->
+<!--       <input id="template_america" name="template" type="radio" value="america" />
+      <label for="template_america"><img src="/assets/example.jpg" alt="" class="template_image"></label>
+      <input id="template_circle" name="template" type="radio" value="circle" />
+      <label for="template_circle"><img src="/assets/example.jpg" alt="" class="template_image"></label> -->
+
     <ul>
-      <li class="template"><img src="/assets/example.jpg" alt="" class="template_image"></li>
-      <li class="template"><img src="/assets/example.jpg" alt="" class="template_image"></li>
-      <li class="template"><img src="/assets/example.jpg" alt="" class="template_image"></li>
-      <li class="template"><img src="/assets/example.jpg" alt="" class="template_image"></li>
-      <li class="template"><img src="/assets/example.jpg" alt="" class="template_image"></li>
-      <li class="template"><img src="/assets/example.jpg" alt="" class="template_image"></li>
+      <li class="template"><%= radio_button_tag("template", "america") %>
+      <%= label_tag(:template, "America") %></li>
+      <li class="template"><%= radio_button_tag("template", "circle") %>
+      <%= label_tag(:template, "Circle") %></li>
+      <li class="template"><%= radio_button_tag("template", "rails") %>
+      <%= label_tag(:template, "America") %></li>
+      <li class="template"><%= radio_button_tag("template", "java") %>
+      <%= label_tag(:template, "America") %></li>
+      <li class="template"><%= radio_button_tag("template", "rails") %>
+      <%= label_tag(:template, "America") %></li>
+      <li class="template"><%= radio_button_tag("template", "java") %>
+      <%= label_tag(:template, "America") %></li>
     </ul>
+<!-- End radio buttons for templates -->
+
     <h4 class="option_header color">Choose color</h4> 
-      <ul>
-        <li class="color_orange"></li>
-        <li class="color_red"></li>
-        <li class="color_seafoam"></li>
-        <li class="color_aqua"></li>
-      </ul>
+
+    <ul>
+      <li class="color_red"><%= radio_button_tag(:color, "red") %></li>
+      <li class="color_yellow"><%= radio_button_tag(:color, "yellow") %></li>
+      <li class="color_seafoam"><%= radio_button_tag(:color, "seafoam") %></li>
+      <li class="color_aqua"><%= radio_button_tag(:color, "aqua") %></li>
+    </ul>
+
     <h4 class="option_header">Text:</h4>
-    <%= form_tag(quotes_url, method: 'post') do %>
+    
       <div>
         <%= text_area_tag :content, nil, placeholder: "Words of wisdom go here...", class: "input_quote" %>
       </div>
@@ -46,46 +68,17 @@
   </div>
 
   <div class="right_half">
+    <div class="card_box">
+      <% if @quote.present? %>
+           <h3 class="start_creating"> start creating your masterpiece</h3>
 
-<% if @quote.present? %>
+      <% else %>
 
-<div class="card_outline">
-  
-  <div class="quote_box">
-    
-    <% current_quote = @quote.content %>
-    <% if current_quote.length <= 8 %>
-      <div class="text">
-        <i class="fa fa-quote-left"></i><%= @quote.content %><i class="fa fa-quote-right"></i>
-    <% else %>
-      <div class="text_over_8">
-        <i class="fa fa-quote-left"></i><%= @quote.content %><i class="fa fa-quote-right"></i>
-    <% end %>
+      <h3 class="start_creating"> start creating your masterpiece</h3>
+
+      <% end %>
     </div>
-
   </div>
-
-  
-<!-- DOWN ARROW AND AUTHOR -->
-  <div class="arrow-down_2">
-  </div>
-  <div class="author">
-    <%= @quote.author %>
-  </div> 
-    
-</div>
-
-<%= link_to "Export to PDF", download_quote_url(:quote => @quote, format: 'pdf', :class => "export_to_pdf") %>
-
-
-
-  </div>
-
-<% else %>
-
-<h3> start creating your masterpiece on the left </h3>
-
-<% end %>
 
 </section>
 
