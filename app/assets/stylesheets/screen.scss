@@ -325,6 +325,7 @@ footer {
             // margin-right: $gutter_width;
             height: 438px;
             width: 582px;
+            border: 1px solid black;
             
 
             .start_creating {
@@ -400,7 +401,26 @@ footer {
     border: 1px solid lightgray;
 }
 
- li {display: inline-block;}
+ li {display: inline-block;
+
+    }
+
+    .color_black {
+        width: 50px; 
+        height: 50px;    
+        background-color: black;
+        padding-right: 5px; 
+        color: white; 
+        margin-bottom: 5px;
+    }
+
+    .color_white {
+        width: 50px; 
+        height: 50px;    
+        background-color: white;
+        padding-right: 5px; 
+        border: 1px solid lightgray;        
+    }
 
     .color_yellow {
         width: 50px; 
@@ -410,6 +430,7 @@ footer {
     }
 
     .color_red {
+        vertical-align: top;
         width: 50px; 
         height: 50px;     
         background-color: $red;
@@ -421,7 +442,8 @@ footer {
         background-color: $green;
     }
 
-    .color_aqua {
+    .color_blue {
+        vertical-align: top;
         width: 50px; 
         height: 50px;     
         background-color: $blue;
@@ -507,11 +529,13 @@ footer {
     
 } 
 
+// Angular CSS
+
 .red {
     color: $red;
 }
 
-.aqua {
+.blue {
     color: $blue;
 }
 
@@ -521,6 +545,30 @@ footer {
 
 .green {
     color: $green;
+}
+
+.white {
+    color: white;
+}
+
+.teeny {font-size: 10px;}
+
+.small {
+    font-size: 15px;
+}
+
+.normal {
+    font-size: 25px;
+}
+
+.big { font-size: 40px;}
+
+.bigger {
+    font-size: 70px
+}
+
+.gigantic {
+    font-size: 150px;
 }
 
 

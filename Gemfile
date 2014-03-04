@@ -13,6 +13,7 @@ gem 'starter_generators'
 gem 'pdfkit'
 gem "wkhtmltopdf-binary"
 gem 'devise'
+gem 'angularjs-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

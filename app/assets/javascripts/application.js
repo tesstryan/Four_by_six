@@ -12,6 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular 
 //= require turbolinks
 //= require_tree .
+
+var card = angular.module('card', []);
+
+function CardCtrl($scope) {
+  
+  
+}
+
+
 
