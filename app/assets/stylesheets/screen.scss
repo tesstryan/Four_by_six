@@ -531,6 +531,8 @@ footer {
 
 // Angular CSS
 
+    // Font Color
+
 .red {
     color: $red;
 }
@@ -551,6 +553,8 @@ footer {
     color: white;
 }
 
+    // Font Size
+
 .teeny {font-size: 10px;}
 
 .small {
@@ -570,5 +574,36 @@ footer {
 .gigantic {
     font-size: 150px;
 }
+
+    // Font Choices
+
+
+    
+
+    .sail {
+        font-family: 'Sail', cursive;
+
+    }
+
+    .arial {
+      font-family: Arial;
+ 
+    }
+
+    .georgia {
+      font-family: Georgia;
+  
+    }
+
+    .lato {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+   
+    }
+
+    .lobster {
+      font-family: 'Lobster', cursive;
+ 
+    }
 
 
