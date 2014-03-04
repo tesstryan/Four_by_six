@@ -80,6 +80,14 @@
 
       </fieldset>
 
+    <h4 class="option_header color">Alignment</h4>
+
+      <fieldset>
+         <input type="radio"  name ="align" value="left" ng-model='textAlign'> Left 
+         <input type="radio"  name ="align" value="center" ng-model='textAlign'> Center 
+         <input type="radio"  name ="align" value="right" ng-model='textAlign'> Right 
+      </fieldset>
+
     <div>
       <%= submit_tag "Create card", class: "create_card_button" %>
     </div>
@@ -91,7 +99,7 @@
   <div class="right_half">
     <div class="card_box" ng-class="template">
         
-        <div ng-class="[color, fontSize, fontFamily]">{{cardText}}</div> 
+        <div ng-class="[color, fontSize, fontFamily, textAlign]">{{cardText}}</div> 
       
     </div>
   </div>
