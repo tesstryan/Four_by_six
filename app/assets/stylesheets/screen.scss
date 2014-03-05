@@ -87,7 +87,7 @@ nav {
 
         &:hover {
             color: darken(rgb(232, 245, 242), 40%);
-            background-color:rgb(232, 245, 242);
+            background-color: white;
         }
         
     }
@@ -326,6 +326,8 @@ footer {
             height: 438px;
             width: 582px;
             border: 1px solid black;
+            padding-top: 10px;
+            word-break :break-all;
             
 
             .start_creating {
@@ -449,6 +451,13 @@ footer {
         background-color: $blue;
     }
 
+    .color_gray {
+        vertical-align: top;
+        width: 50px; 
+        height: 50px;     
+        background-color: $darkgray;
+    }
+
 // End quote page styling
 
 
@@ -551,6 +560,10 @@ footer {
 
 .white {
     color: white;
+}
+
+.gray {
+    color: $darkgray;
 }
 
     // Font Size
