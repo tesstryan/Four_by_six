@@ -11,13 +11,18 @@
 	</section>
 
     <section class="profile_layout">
-    	<ul>
-    		<% @user.quotes.each do |quote| %>
-	        <li>
-				<%= quote.content %>
-	        </li>
-	        <% end %>
+		
+		<% @user.quotes.each do |quote| %>
+	       
+	        <div class="card_box">
+				<div class="<%= quote.color %> <%= quote.font_size %> <%= quote.font %> <%= quote.alignment %>" >
+					<% current_quote = simple_format(quote.content) %>
+					<%= current_quote %>
+				
+				</div>	
+			</div>
+			<% end %>
+	 
+	</section>
 	
-        </ul>
-    </section>
 

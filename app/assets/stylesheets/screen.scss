@@ -235,7 +235,7 @@ footer {
         
 
         h2 {font-size: 40px;
-            background-color: $seafoam_nav;
+            background-color: white;
             color: $darkgray;
             margin-top: -43px;
             width: 175px;
@@ -333,7 +333,7 @@ footer {
             border: 1px solid black;
             padding: 8px 8px 8px 8px;
 
-            word-break: break-all;
+            word-break: normal;
             
 
             .start_creating {
@@ -475,7 +475,7 @@ footer {
 
 .profile_layout {
     font-size: 0;
-    @include offset(2);
+    
 
 
         .welcome_text {
@@ -484,26 +484,29 @@ footer {
 
         .gallery_text {
             font-size: 30px;
-            @include columnify(12);
+            @include columnify(16);
             text-align: right;
             margin-bottom: 20px;
         }
 
-        div {
-                &:nth-of-type(4n) {
-                    margin-right: 0;
-                }
-            } 
     
 
-        li {
-            @include columnify(3);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            font-size: 20px;
-            background:white; 
-            display: inline-block;
-            } 
+        .card_box {
+                display: inline-block;
+                -webkit-transform:scale(0.6,0.6);
+                vertical-align: top;
+                margin-left: -85px;
+                margin-bottom: -70px;
+                margin-right: -40px;
+                text-align: right;
+
+                &:nth-of-type(3){
+                    margin-right: -10px;
+                }
+
+     
+         }
+        
            
 }
 
@@ -645,5 +648,5 @@ footer {
             border: 1px solid black;
             padding: 8px 8px 8px 8px;
 
-            word-break: break-all;}
+            word-break: normal;}
 

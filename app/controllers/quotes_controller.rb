@@ -24,7 +24,12 @@ class QuotesController < ApplicationController
     @quote.font = params[:font]  
     @quote.alignment = params[:alignment] 
     @quote.author = params[:author]
-    @quote.user_id = params[:user_id]
+
+    if current_user.present? 
+      @quote.user_id = current_user[:id]
+    else
+      @quote.user_id = params[:user_id]
+    end
 
     if @quote.save
       redirect_to quote_url(@quote.id)
