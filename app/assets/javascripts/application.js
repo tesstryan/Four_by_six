@@ -12,6 +12,22 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require angular 
+//= require angular-sanitize
+
 //= require_tree .
+
+var card = angular.module("card", ['ngSanitize']);
+
+card.filter('newlines', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml( val.replace(new RegExp("\n","g"), '<br>') );
+    };
+});
+
+card.controller("CardCtrl", function ($scope) {
+
+
+
+});
 

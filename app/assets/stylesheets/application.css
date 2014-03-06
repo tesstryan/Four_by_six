@@ -16,7 +16,6 @@
 
 @media print {
 	body {
-	font-family: 'Open Sans', sans-serif;
 	}
 
 	a {display:none;}
@@ -28,7 +27,6 @@
 /*card design*/
 
 body {
-font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -83,6 +81,107 @@ font-family: 'Open Sans', sans-serif;
 	margin-top: 3%;
 	color: #6b9eb4;
 }
+
+
+/*Added PDF*/
+
+// Angular CSS
+
+    // Font Color
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.green {
+    color: green;
+}
+
+.white {
+    color: white;
+}
+
+.gray {
+    color: gray;
+}
+
+    // Font Size
+
+.teeny {font-size: 10px;}
+
+.small {
+    font-size: 15px;
+}
+
+.normal {
+    font-size: 25px;
+}
+
+.big { font-size: 40px;}
+
+.bigger {
+    font-size: 70px
+}
+
+.gigantic {
+    font-size: 150px;
+}
+
+    // Font Choices
+
+.sail {
+    font-family: 'Sail', cursive;
+
+}
+
+.arial {
+  font-family: Arial;
+
+}
+
+.georgia {
+  font-family: Georgia;
+
+}
+
+.lato {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+
+}
+
+.lobster {
+  font-family: 'Lobster', cursive;
+
+}
+
+        // Text Align
+
+.left {text-align: left }
+
+.center {text-align: center }
+
+.right {text-align: right }
+
+
+// Show Page 
+
+.card_box {
+	height: 438px;
+	width: 582px;
+	border: 1px solid black;
+	padding: 8px 8px 8px 8px;
+
+	word-break: break-all;}
+
 
 
 

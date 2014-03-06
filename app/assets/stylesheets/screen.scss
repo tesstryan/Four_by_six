@@ -20,6 +20,11 @@ $yellow: rgb(251,207,89);
 $red: rgb(222,90,65);
 $green: rgb(192, 225, 192);
 
+// Colorbox Variables
+$colorbox_width: 25px;
+$colorbox_height: 25px; 
+
+
 
 // Global templates
 
@@ -87,7 +92,7 @@ nav {
 
         &:hover {
             color: darken(rgb(232, 245, 242), 40%);
-            background-color:rgb(232, 245, 242);
+            background-color: white;
         }
         
     }
@@ -230,7 +235,7 @@ footer {
         
 
         h2 {font-size: 40px;
-            background-color: $seafoam_nav;
+            background-color: white;
             color: $darkgray;
             margin-top: -43px;
             width: 175px;
@@ -323,8 +328,12 @@ footer {
         .card_box {
             background-color: white;
             // margin-right: $gutter_width;
-            height: 438px;
-            width: 582px;
+            height: 288px;
+            width: 432px;
+            border: 1px solid black;
+            padding: 8px 8px 8px 8px;
+
+            word-break: normal;
             
 
             .start_creating {
@@ -400,31 +409,63 @@ footer {
     border: 1px solid lightgray;
 }
 
- li {display: inline-block;}
+ li {display: inline-block;
+
+    }
+
+    .color_black {
+        vertical-align: top;
+        width: $colorbox_width; 
+        height: $colorbox_height;    
+        background-color: black;
+        padding-right: 5px; 
+        color: white; 
+        margin-bottom: 5px;
+    }
+
+    .color_white {
+        vertical-align: top;
+        width: $colorbox_width; 
+        height: $colorbox_height;    
+        background-color: white;
+        padding-right: 5px; 
+        border: 1px solid lightgray;        
+    }
 
     .color_yellow {
-        width: 50px; 
-        height: 50px;    
+        vertical-align: top;
+        width: $colorbox_width; 
+        height: $colorbox_height;    
         background-color: $yellow;
         padding-right: 5px;
     }
 
     .color_red {
-        width: 50px; 
-        height: 50px;     
+        vertical-align: top;
+        width: $colorbox_width; 
+        height: $colorbox_height;     
         background-color: $red;
     }
 
     .color_green {
-        width: 50px; 
-        height: 50px;     
+        vertical-align: top;
+        width: $colorbox_width; 
+        height: $colorbox_height;     
         background-color: $green;
     }
 
-    .color_aqua {
-        width: 50px; 
-        height: 50px;     
+    .color_blue {
+        vertical-align: top;
+        width: $colorbox_width; 
+        height: $colorbox_height;     
         background-color: $blue;
+    }
+
+    .color_gray {
+        vertical-align: top;
+        width: $colorbox_width; 
+        height: $colorbox_height;     
+        background-color: $darkgray;
     }
 
 // End quote page styling
@@ -434,7 +475,7 @@ footer {
 
 .profile_layout {
     font-size: 0;
-    @include offset(2);
+    
 
 
         .welcome_text {
@@ -443,26 +484,29 @@ footer {
 
         .gallery_text {
             font-size: 30px;
-            @include columnify(12);
+            @include columnify(16);
             text-align: right;
             margin-bottom: 20px;
         }
 
-        div {
-                &:nth-of-type(4n) {
-                    margin-right: 0;
-                }
-            } 
     
 
-        li {
-            @include columnify(3);
-            margin-right: $gutter_width;
-            margin-bottom: 20px;
-            font-size: 20px;
-            background:white; 
-            display: inline-block;
-            } 
+        .card_box {
+                display: inline-block;
+                -webkit-transform:scale(0.6,0.6);
+                vertical-align: top;
+                margin-left: -85px;
+                margin-bottom: -70px;
+                margin-right: -40px;
+                text-align: right;
+
+                &:nth-of-type(3){
+                    margin-right: -10px;
+                }
+
+     
+         }
+        
            
 }
 
@@ -472,9 +516,8 @@ footer {
 // Show page
 
 .america { background: url("/assets/america.jpg") no-repeat;
-    height: 288px;
-    width: 432px;
-    border: 1px solid lightgray;
+    height: 438px;
+    width: 582px;
 }
 
 // .offset {
@@ -507,11 +550,15 @@ footer {
     
 } 
 
+// Angular CSS
+
+    // Font Color
+
 .red {
     color: $red;
 }
 
-.aqua {
+.blue {
     color: $blue;
 }
 
@@ -523,4 +570,83 @@ footer {
     color: $green;
 }
 
+.white {
+    color: white;
+}
+
+.gray {
+    color: $darkgray;
+}
+
+    // Font Size
+
+.teeny {font-size: 10px;}
+
+.small {
+    font-size: 15px;
+}
+
+.normal {
+    font-size: 25px;
+}
+
+.big { font-size: 40px;}
+
+.bigger {
+    font-size: 70px
+}
+
+.gigantic {
+    font-size: 150px;
+    line-height: 130px;
+}
+
+    // Font Choices
+
+.sail {
+    font-family: 'Sail', cursive;
+
+}
+
+.arial {
+  font-family: Arial;
+
+}
+
+.georgia {
+  font-family: Georgia;
+
+}
+
+.lato {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+
+}
+
+.lobster {
+  font-family: 'Lobster', cursive;
+
+}
+
+        // Text Align
+
+.left {text-align: left }
+
+.center {text-align: center }
+
+.right {text-align: right }
+
+
+// Show Page 
+
+        .card_box {
+            background-color: white;
+            // margin-right: $gutter_width;
+            height: 288px;
+            width: 432px;
+            border: 1px solid black;
+            padding: 8px 8px 8px 8px;
+
+            word-break: normal;}
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140303011553) do
+ActiveRecord::Schema.define(version: 20140305234634) do
 
   create_table "quotes", force: true do |t|
     t.text    "content"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 20140303011553) do
     t.integer "user_id"
     t.string  "template"
     t.string  "color"
+    t.string  "font_size"
+    t.string  "font"
+    t.string  "alignment"
   end
 
   create_table "users", force: true do |t|
