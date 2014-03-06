@@ -1,3 +1,5 @@
+<div class="create_page">
+
 <div class="create_your_own">
   
   <h2>Create your own.</h2>
@@ -18,37 +20,27 @@
     <h4 class="option_header one">Choose template</h4>
 
     <ul>
-      <li class="template"><%= radio_button_tag("template", "America") %>
-      <%= label_tag(:template, "America") %></li>
-      <li class="template"><%= radio_button_tag("template", "Circle") %>
-      <%= label_tag(:template, "Circle") %></li>
-      <li class="template"><%= radio_button_tag("template", "rails") %>
-      <%= label_tag(:template, "America") %></li>
-      <li class="template"><%= radio_button_tag("template", "java") %>
-      <%= label_tag(:template, "America") %></li>
-      <li class="template"><%= radio_button_tag("template", "rails") %>
-      <%= label_tag(:template, "America") %></li>
-      <li class="template"><%= radio_button_tag("template", "java") %>
-      <%= label_tag(:template, "America") %></li>
+      <li><input type="radio" name ="template" value="blank" ng-model='template'> Blank </li>
+      <!-- <li><input type="radio" name ="template" value="america" ng-model='template'> America </li> -->
     </ul>
 <!-- End radio buttons for templates -->
 
     <h4 class="option_header">Text:</h4>
     
     <div>
-      <textarea type="text" ng-model="cardText" placeholder="Words go here..." name="content"></textarea>
+      <textarea type="text" ng-model="cardText" placeholder="Words go here..." name="content" class='input_quote'></textarea>
 
     </div>
 
     <h4 class="option_header">Font Size</h4>
 
       <fieldset>
-         <input type="radio"  name ="size" value="teeny" ng-model='fontSize'> Teeny
-         <input type="radio"  name ="size" value="small" ng-model='fontSize'> Small
-         <input type="radio"  name ="size" value="normal" ng-model='fontSize'> Normal
-         <input type="radio" value="big"  name ="size" ng-model='fontSize'> Big
-         <input type="radio" value="bigger"  name ="size" ng-model='fontSize'> Bigger
-         <input type="radio" value="gigantic"  name ="size" ng-model='fontSize'> Gigantic
+         <input type="radio" name ="font_size" value="teeny" ng-model='fontSize'> Teeny
+         <input type="radio" name ="font_size" value="small" ng-model='fontSize'> Small
+         <input type="radio" name ="font_size" value="normal" ng-model='fontSize'> Normal
+         <input type="radio" value="big" name ="font_size" ng-model='fontSize'> Big
+         <input type="radio" value="bigger" name ="font_size" ng-model='fontSize'> Bigger
+         <input type="radio" value="gigantic" name ="font_size" ng-model='fontSize'> Gigantic
       </fieldset>
 
     <h4 class="option_header color">Choose color</h4>
@@ -84,14 +76,15 @@
     <h4 class="option_header color">Alignment</h4>
 
       <fieldset>
-         <input type="radio"  name ="align" value="left" ng-model='textAlign'> Left 
-         <input type="radio"  name ="align" value="center" ng-model='textAlign'> Center 
-         <input type="radio"  name ="align" value="right" ng-model='textAlign'> Right 
+         <input type="radio"  name ="alignment" value="left" ng-model='textAlign'> Left 
+         <input type="radio"  name ="alignment" value="center" ng-model='textAlign'> Center 
+         <input type="radio"  name ="alignment" value="right" ng-model='textAlign'> Right 
       </fieldset>
 
     <div>
       <%= submit_tag "Create card", class: "create_card_button" %>
     </div>
+
     <% end %>
   </div>
 
@@ -100,10 +93,11 @@
   <div class="right_half">
     <div class="card_box" ng-class="template">
         
-        <div ng-class="[color, fontSize, fontFamily, textAlign]">{{cardText}}</div> 
+        <div ng-class="[color, template, fontSize, fontFamily, textAlign]" ng-bind-html="cardText | newlines" ></div> 
       
     </div>
   </div>
 
 </section>
 
+</div>

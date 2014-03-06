@@ -20,11 +20,14 @@ class QuotesController < ApplicationController
     @quote.content = params[:content]
     @quote.template = params[:template]
     @quote.color = params[:color]
+    @quote.font_size = params[:font_size]
+    @quote.font = params[:font]  
+    @quote.alignment = params[:alignment] 
     @quote.author = params[:author]
     @quote.user_id = params[:user_id]
 
     if @quote.save
-      redirect_to quotes_url
+      redirect_to quote_url(@quote.id)
     else
       render 'new'
     end
@@ -38,7 +41,10 @@ class QuotesController < ApplicationController
     @quote = Quote.find_by(id: params[:id])
     @quote.content = params[:content]
     @quote.template = params[:template]
-    @quote.color = params[:color]      
+    @quote.color = params[:color]
+    @quote.font_size = params[:font_size]
+    @quote.font = params[:font]  
+    @quote.alignment = params[:alignment]    
     @quote.author = params[:author]
     @quote.user_id = params[:user_id]
 
@@ -65,7 +71,7 @@ class QuotesController < ApplicationController
     html = render_to_string(action: quote_path(@quote), layout: 'application', template: 'quotes/show')
     kit = PDFKit.new(html)
     kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/application.css"
-    send_data(kit.to_pdf, filename: "#{@quote.author}", type: "application/pdf") 
+    send_data(kit.to_pdf, filename: "fourbysix", type: "application/pdf") 
 
   end
 end

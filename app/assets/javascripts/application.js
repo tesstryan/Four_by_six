@@ -17,17 +17,16 @@
 //= require turbolinks
 //= require_tree .
 
-var card = angular.module('card', ['ngSanitize']);
+var card = angular.module("card", ['ngSanitize']);
 
-card.filter('newlines', function () {
-    return function(text) {
-        return text.replace(/\n/g, '<br/>');
-    }
-})
+card.filter('newlines', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml( val.replace(new RegExp("\n","g"), '<br>') );
+    };
+});
 
-card.controller("CardCtrl", function($scope, $sce) {
-	$scope.trustedCardText = $sce.trustAsHtml($scope.cardText)
-})
+card.controller("CardCtrl", function ($scope) {
 
 
+});
 

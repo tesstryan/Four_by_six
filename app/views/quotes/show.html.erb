@@ -1,10 +1,10 @@
 
-<div class="card_outline">
+<div class="card_box">
 	
-	<div class="<%= @quote.template %> offset">
+	<div class="<%= @quote.template %>">
 
-		<div class="<%= @quote.color %> text_over_8">
-			<% current_quote = simple_format(@quote.content) %>
+		<div class="<%= @quote.color %> <%= @quote.font_size %> <%= @quote.font %> <%= @quote.alignment %>" >
+			<% current_quote = @quote.content %>
 			<%= current_quote %>
 
 		</div>	
@@ -12,6 +12,7 @@
 	</div>	
 
 </div>
+
 
 	
 
