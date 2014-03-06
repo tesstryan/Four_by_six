@@ -4,7 +4,7 @@
 	<div class="<%= @quote.template %>">
 
 		<div class="<%= @quote.color %> <%= @quote.font_size %> <%= @quote.font %> <%= @quote.alignment %>" >
-			<% current_quote = @quote.content %>
+			<% current_quote = simple_format(@quote.content) %>
 			<%= current_quote %>
 
 		</div>	
