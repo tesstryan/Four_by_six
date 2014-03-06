@@ -26,7 +26,8 @@ card.filter('newlines', function($sce) {
 });
 
 card.controller("CardCtrl", function ($scope) {
-
+	$scope.color = 'black'; 
+	$scope.fontSize = 'normal';
 
 
 });

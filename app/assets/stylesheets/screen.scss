@@ -25,6 +25,14 @@ $colorbox_width: 25px;
 $colorbox_height: 25px; 
 
 
+@font-face{
+    font-family: 'LobsterFont';
+    src: font-url("Lobster.otf") unquote("format('opentype')");
+    font-weight: normal;
+    font-style: normal;
+}
+
+$lobster: 'LobsterFont';
 
 // Global templates
 
@@ -409,65 +417,7 @@ footer {
     border: 1px solid lightgray;
 }
 
- li {display: inline-block;
-
-    }
-
-    .color_black {
-        vertical-align: top;
-        width: $colorbox_width; 
-        height: $colorbox_height;    
-        background-color: black;
-        padding-right: 5px; 
-        color: white; 
-        margin-bottom: 5px;
-    }
-
-    .color_white {
-        vertical-align: top;
-        width: $colorbox_width; 
-        height: $colorbox_height;    
-        background-color: white;
-        padding-right: 5px; 
-        border: 1px solid lightgray;        
-    }
-
-    .color_yellow {
-        vertical-align: top;
-        width: $colorbox_width; 
-        height: $colorbox_height;    
-        background-color: $yellow;
-        padding-right: 5px;
-    }
-
-    .color_red {
-        vertical-align: top;
-        width: $colorbox_width; 
-        height: $colorbox_height;     
-        background-color: $red;
-    }
-
-    .color_green {
-        vertical-align: top;
-        width: $colorbox_width; 
-        height: $colorbox_height;     
-        background-color: $green;
-    }
-
-    .color_blue {
-        vertical-align: top;
-        width: $colorbox_width; 
-        height: $colorbox_height;     
-        background-color: $blue;
-    }
-
-    .color_gray {
-        vertical-align: top;
-        width: $colorbox_width; 
-        height: $colorbox_height;     
-        background-color: $darkgray;
-    }
-
+ 
 // End quote page styling
 
 
@@ -476,8 +426,6 @@ footer {
 .profile_layout {
     font-size: 0;
     
-
-
         .welcome_text {
             font-size: 30px;
         }
@@ -488,8 +436,6 @@ footer {
             text-align: right;
             margin-bottom: 20px;
         }
-
-    
 
         .card_box {
                 display: inline-block;
@@ -503,11 +449,7 @@ footer {
                 &:nth-of-type(3){
                     margin-right: -10px;
                 }
-
-     
-         }
-        
-           
+         }          
 }
 
 // End profile page styling
@@ -515,40 +457,23 @@ footer {
 
 // Show page
 
-.america { background: url("/assets/america.jpg") no-repeat;
-    height: 438px;
-    width: 582px;
-}
+// .america { background: url("/assets/america.jpg") no-repeat;
+//     height: 438px;
+//     width: 582px;
+// }
 
 // .offset {
 //     @include offset(4);
 // }
 
-.quote {
-    background: url("/assets/quotes_blue.jpg") no-repeat;
-    height: 288px;
-    width: 432px;
-    border: 1px solid lightgray;
-}
+// .quote {
+//     background: url("/assets/quotes_blue.jpg") no-repeat;
+//     height: 288px;
+//     width: 432px;
+//     border: 1px solid lightgray;
+// }
 
-.text {
-    color:white; 
-    font-size: 150px; 
-    padding: 10px; 
-    text-align: center; 
-    padding-top: 30%;
-}
 
-.text_over_8 {
-    color: white; 
-    font-size: 40px; 
-    padding: 10px; 
-    line-height: 45px; 
-    text-align: center;
-    width: 400px; 
-    padding-top: 15%;
-    
-} 
 
 // Angular CSS
 
@@ -625,7 +550,7 @@ footer {
 }
 
 .lobster {
-  font-family: 'Lobster', cursive;
+  font-family: $lobster;
 
 }
 
@@ -636,6 +561,72 @@ footer {
 .center {text-align: center }
 
 .right {text-align: right }
+
+// Radio button styling
+
+    // 
+
+#donate label {
+    float:left;
+    width:30px;
+    height: 30px;
+    margin-right: 3px;
+
+    overflow:auto;
+       
+}
+
+#donate label span {
+    text-align:center;
+    padding:13px 0px;
+    display:block;
+}
+
+#donate label input {
+    position:absolute;
+    top:-20px;
+}
+
+#donate input:checked + span {
+    border:1px solid #404040;
+    height: 30px;
+    color:#F7F7F7;
+
+}
+
+#donate .yellow {
+    background-color:$yellow;
+    color:#333;
+}
+
+#donate .blue {
+    background-color:$blue;
+    color:#333;
+}
+
+#donate .black {
+    background-color: black;
+    color:#333;
+}
+
+#donate .green {
+    background-color:$green;
+    color:#333;
+}
+#donate .white {
+    background-color: white;
+    color:#333;
+}
+#donate .gray {
+    background-color: $darkgray;
+    color:#333;
+
+}
+#donate .red {
+    background-color: $red;
+    color:#333;
+}
+
 
 
 // Show Page 
