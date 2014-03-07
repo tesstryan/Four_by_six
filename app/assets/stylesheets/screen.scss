@@ -584,7 +584,7 @@ footer {
 }
 
 #donate_color input:checked + span {
-    border:1px solid #404040;
+    border:2px solid $seafoam_dark;
     height: 30px;
     color:#F7F7F7;
 
@@ -643,7 +643,7 @@ footer {
 }
 
 #donate_align input:checked + span {
-    border:1px solid #404040;
+    border:1px solid $seafoam_dark;
     height: 30px;
 }
 
@@ -667,7 +667,7 @@ footer {
 }
 
 #donate_font input:checked + span {
-    background-color: black;
+    background-color: $seafoam_dark;
     color:white;
 }
 
@@ -675,7 +675,6 @@ footer {
 
 #donate_fontsize label {
     display: inline-block;
-    height: 40px;
     margin-right: 5px;      
 }
 
@@ -690,8 +689,8 @@ footer {
 }
 
 #donate_fontsize input:checked + span {
-    background-color: black;
-    color:white;
+
+    color:$seafoam_dark;
 }
 
 
@@ -703,7 +702,7 @@ footer {
     // margin-right: $gutter_width;
     height: 288px;
     width: 432px;
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 8px 8px 8px 8px;
 
     word-break: normal;}
