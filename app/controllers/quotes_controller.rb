@@ -75,7 +75,7 @@ class QuotesController < ApplicationController
     # html = "<h1>hello world</h1>"
     html = render_to_string(action: quote_path(@quote), layout: 'application', template: 'quotes/show')
     kit = PDFKit.new(html)
-    kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/application.css"
+    kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/pdf.css"
     send_data(kit.to_pdf, filename: "fourbysix", type: "application/pdf") 
 
   end

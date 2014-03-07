@@ -1,6 +1,7 @@
 @import "library";
 @import "reset";
 
+
 $max_width: 960px;
 $gutter_width: 15px;
 $col_count: 16;
@@ -25,14 +26,9 @@ $colorbox_width: 25px;
 $colorbox_height: 25px; 
 
 
-@font-face{
-    font-family: 'LobsterFont';
-    src: font-url("Lobster.otf") unquote("format('opentype')");
-    font-weight: normal;
-    font-style: normal;
-}
 
-$lobster: 'LobsterFont';
+
+$lobster: 'lobster';
 
 // Global templates
 
@@ -550,7 +546,7 @@ footer {
 }
 
 .lobster {
-  font-family: $lobster;
+  font-family: 'Lobster Two', cursive;
 
 }
 
@@ -566,78 +562,159 @@ footer {
 
     // 
 
-#donate label {
+#donate_color label {
     float:left;
     width:30px;
     height: 30px;
-    margin-right: 3px;
+    margin-right: 7px;
 
     overflow:auto;
        
 }
 
-#donate label span {
+#donate_color label span {
     text-align:center;
     padding:13px 0px;
     display:block;
 }
 
-#donate label input {
+#donate_color label input {
     position:absolute;
-    top:-20px;
+    top: -100px;
 }
 
-#donate input:checked + span {
+#donate_color input:checked + span {
     border:1px solid #404040;
     height: 30px;
     color:#F7F7F7;
 
 }
 
-#donate .yellow {
+#donate_color .yellow {
     background-color:$yellow;
     color:#333;
 }
 
-#donate .blue {
+#donate_color .blue {
     background-color:$blue;
     color:#333;
 }
 
-#donate .black {
+#donate_color .black {
     background-color: black;
     color:#333;
 }
 
-#donate .green {
+#donate_color .green {
     background-color:$green;
     color:#333;
 }
-#donate .white {
+#donate_color .white {
     background-color: white;
     color:#333;
 }
-#donate .gray {
+#donate_color .gray {
     background-color: $darkgray;
     color:#333;
 
 }
-#donate .red {
+#donate_color .red {
     background-color: $red;
     color:#333;
+}
+
+// Text Alignment Radio Button Styles
+
+#donate_align label {
+    float:left;
+    width:30px;
+    margin-right: 10px;      
+}
+
+#donate_align label span {
+    text-align:center;
+    padding:7px 0px;
+    display:block;
+}
+
+#donate_align label input {
+    position:absolute;
+    top:-100px;
+}
+
+#donate_align input:checked + span {
+    border:1px solid #404040;
+    height: 30px;
+}
+
+// Font Radio Button Styles
+
+#donate_font label {
+    float:left;
+    width:60px;
+    margin-right: 5px;      
+}
+
+#donate_font label span {
+    text-align:center;
+    padding:5px 5px 5px 5px;
+    display:block;
+}
+
+#donate_font label input {
+    position:absolute;
+    top:-100px;
+}
+
+#donate_font input:checked + span {
+    background-color: black;
+    color:white;
+}
+
+// Font Size Radio Buttons
+
+#donate_fontsize label {
+    display: inline-block;
+    height: 40px;
+    margin-right: 5px;      
+}
+
+#donate_fontsize label span {
+    text-align:center;
+    display:block;
+}
+
+#donate_fontsize label input {
+    position:absolute;
+    top:-100px;
+}
+
+#donate_fontsize input:checked + span {
+    background-color: black;
+    color:white;
 }
 
 
 
 // Show Page 
 
-        .card_box {
-            background-color: white;
-            // margin-right: $gutter_width;
-            height: 288px;
-            width: 432px;
-            border: 1px solid black;
-            padding: 8px 8px 8px 8px;
+.card_box {
+    background-color: white;
+    // margin-right: $gutter_width;
+    height: 288px;
+    width: 432px;
+    border: 1px solid black;
+    padding: 8px 8px 8px 8px;
 
-            word-break: normal;}
+    word-break: normal;}
 
+.export {
+
+}
+
+.page_center {
+    width: 960px;
+    max-width: 960;
+    margin: 0 auto;
+}
+    
