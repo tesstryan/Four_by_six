@@ -5,7 +5,7 @@ PDFKit.configure do |config|
     :print_media_type => true
   }
   # Use only if your external hostname is unavailable on the server.
-  config.root_url = "http://localhost:3000" 
+  config.root_url = "http://fourbysix.herokuapp.com" 
 
 end 
 
