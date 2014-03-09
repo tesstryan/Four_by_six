@@ -25,9 +25,6 @@ $green: rgb(192, 225, 192);
 $colorbox_width: 25px;
 $colorbox_height: 25px; 
 
-
-
-
 $lobster: 'lobster';
 
 // Global templates
@@ -293,52 +290,104 @@ footer {
 
 // Quote page styling
 
+.create_page {
+    background-color: $seafoam_nav;
+
+}
+
 .create_your_own {
     font-size: 40px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    padding-top: 30px;
+    color: $seafoam_dark;
 }
 
 .layout {
     font-size: 0;
-    @include offset(1);
+
+   
         
     div {
             &:nth-of-type(2n) {
                 margin-right: 0;
                 vertical-align: top;
-            }
+                 }
         } 
 
     .left_half {
+        @include offset(1);
         @include columnify(5);
         margin-right: $gutter_width;
         margin-bottom: 20px;
         font-size: 15px;
         display: inline-block;
-        height: 438px;
-        // background-color: pink;
+        margin-bottom: 60px;
+        background-color: white;
+        padding: 8px;
+        text-align: center;
+
+        .input_quote {
+            width: 100%;
+            max-width: 100%;
+            height: 75px;
+            padding: 5px;
+            font-size: 13px;
+            border-radius: 2px;
+            border: 1px gray solid;
+        }
+
+        fieldset {
+            margin-bottom: 19px;
+            text-align: center;
+        }
+
+        .create_card_button {
+            color: white; 
+            background-color: darken($darkgray, 20%);
+            padding: 8px;
+            padding-right: 30px;
+            padding-left: 30px;
+            outline: 0;
+            border: 0;
+        
+            &:hover {
+               background-color: darken($darkgray, 50%); 
+            }
+
+        }
+
+        .option_header {
+            font-style: italic; 
+            font-size: 15px;
+            color: darken($darkgray, 50%);
+            margin-bottom: 6px;
+            margin-top: 15px;
+       }
+
     }
 
+
     .right_half {
-        @include columnify(9);
+        margin-bottom: 60px;
+        @include offset(1);
+        @include columnify(7);
         margin-right: $gutter_width;
         margin-bottom: 20px;
         font-size: 15px;
         display: inline-block;
-        // background-color: pink;
+        
 
         .card_box {
-            background-color: white;
-            // margin-right: $gutter_width;
-            height: 288px;
-            width: 432px;
-            border: 1px solid black;
-            padding: 8px 8px 8px 8px;
-
-            word-break: normal;
-            
+                -webkit-transform:scale(1.2,1.2);
+                margin-top: 28px;
+                height: 288px;
+                width: 432px;
+                border: 1px solid white;
+                padding: 8px 8px 8px 8px;
+                word-break: normal;
+                background-color: white;
 
             .start_creating {
                 text-align: center;
@@ -347,70 +396,8 @@ footer {
                 font-size: 50px;
                 color: $blue;
             }
-
         }
-
-
     }
-}
-
-    // Left Side
-
-
-.input_quote {
-    width: 230px;
-    max-width: 230px;
-    height: 100px;
-    padding: 5px;
-    font-size: 13px;
-    border-radius: 2px;
-    border: 1px gray solid;
-}
-
-.input {
-    width: 200px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    padding: 5px;
-    font-size: 13px;
-    // border-radius: 5px;
-    border: 1px gray solid;
-    color: black;
-}
-
-.create_card_button {
-    color: white; 
-    background-color: darken($darkgray, 20%);
-    padding: 8px;
-    outline: 0;
-    border: 0;
-    margin-top: 20px;
-
-    &:hover {
-       background-color: darken($darkgray, 50%); 
-    }
-
-}
-
-.option_header {
-    font-style: italic; 
-    font-size: 15px;
-    color: darken($darkgray, 50%);
-    margin-bottom: 6px;
-    margin-top: 15px;
-}
-
-.one {
-    margin-top: 0px;
-}
-
-.template {
-    display: inline-block;
-}
-
-.template_image {
-    width: 75px;
-    border: 1px solid lightgray;
 }
 
  
@@ -429,29 +416,95 @@ footer {
         .gallery_text {
             font-size: 30px;
             @include columnify(16);
+            margin-right: $gutter_width;
             text-align: right;
             margin-bottom: 20px;
         }
 
-        .card_box {
+        .profile_columns {
+            height: 168px; 
+            @include columnify(4);
+            background-color: $seafoam_nav;
+            display: inline-block;
+            overflow: hidden;
+            margin-right: $gutter_width;
+            margin-bottom: $gutter_width;
+
+            &:nth-of-type(4n) {
+                margin-right: 0px;
+            }
+        }
+
+        .card_box_profile {
                 display: inline-block;
-                -webkit-transform:scale(0.6,0.6);
+                -webkit-transform:scale(0.5,0.5);
+                border: 1px solid white;
+                background-color: white;
                 vertical-align: top;
-                margin-left: -85px;
-                margin-bottom: -70px;
-                margin-right: -40px;
+                position: relative;
+                left: -102px;
+                top: -60px;
+                height: 288px;
+                padding: 8px 8px 8px 8px;
+                width: 432px;
+                word-break: normal;
                 text-align: right;
 
-                &:nth-of-type(3){
-                    margin-right: -10px;
-                }
          }          
 }
 
 // End profile page styling
 
 
-// Show page
+
+// Show Page 
+
+
+.page_center {
+    font-size: 0;
+    width: 960px;
+    max-width: 960;
+    margin: 0 auto;
+    background-color: $seafoam_nav;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    display: inline-block;
+
+    .show_left {
+        @include offset(2);
+        @include columnify(8);
+        margin-right: $gutter_width;
+        display: inline-block;
+    }
+    .show_right {
+        @include offset(1);
+        @include columnify(4);
+        display: inline-block;
+    }
+
+    .card_box_show {
+        margin-top: 20px;
+        background-color: white;
+        // margin-right: $gutter_width;
+        height: 288px;
+        width: 432px;
+        border: 1px solid white;
+        padding: 8px 8px 8px 8px;
+        word-break: normal; 
+        margin-bottom: 20px;
+    }
+
+    .export {
+    font-size: 15px;
+
+
+
+    &:hover {
+     color: darken($darkgray, 50%); 
+    }
+    }
+}
+  
 
 // .america { background: url("/assets/america.jpg") no-repeat;
 //     height: 438px;
@@ -509,12 +562,15 @@ footer {
 
 .normal {
     font-size: 25px;
+    line-height: 20px;
 }
 
-.big { font-size: 40px;}
+.big { font-size: 40px;
+line-height: 35px;}
 
 .bigger {
-    font-size: 70px
+    font-size: 70px;
+    line-height: 60px;
 }
 
 .gigantic {
@@ -562,158 +618,149 @@ footer {
 
     // 
 
-#donate_color label {
+#radio_color label {
     float:left;
-    width:30px;
-    height: 30px;
-    margin-right: 7px;
+    width:35px;
+    height: 35px;
+    margin-right: 12px;
+    overflow:auto;  
 
-    overflow:auto;
-       
+    &:nth-of-type(6n) {
+        margin-right: 0px;
+    } 
 }
 
-#donate_color label span {
+#radio_color label span {
     text-align:center;
     padding:13px 0px;
     display:block;
 }
 
-#donate_color label input {
+#radio_color label input {
     position:absolute;
     top: -100px;
 }
 
-#donate_color input:checked + span {
+#radio_color input:checked + span {
     border:2px solid $seafoam_dark;
-    height: 30px;
+    height: 35px;
     color:#F7F7F7;
 
 }
 
-#donate_color .yellow {
+#radio_color .yellow {
     background-color:$yellow;
     color:#333;
 }
 
-#donate_color .blue {
+#radio_color .blue {
     background-color:$blue;
     color:#333;
 }
 
-#donate_color .black {
+#radio_color .black {
     background-color: black;
     color:#333;
 }
 
-#donate_color .green {
+#radio_color .green {
     background-color:$green;
     color:#333;
 }
-#donate_color .white {
+#radio_color .white {
     background-color: white;
     color:#333;
 }
-#donate_color .gray {
+#radio_color .gray {
     background-color: $darkgray;
     color:#333;
 
 }
-#donate_color .red {
+#radio_color .red {
     background-color: $red;
     color:#333;
 }
 
 // Text Alignment Radio Button Styles
 
-#donate_align label {
-    float:left;
-    width:30px;
-    margin-right: 10px;      
+fieldset #radio_align {
+    text-align: center;
+    margin-left: 30%;
 }
 
-#donate_align label span {
+#radio_align label {
+    float:left;
+    width:30px;
+    margin-right: 10px; 
+
+}
+
+#radio_align label span {
     text-align:center;
     padding:7px 0px;
     display:block;
 }
 
-#donate_align label input {
+#radio_align label input {
     position:absolute;
     top:-100px;
 }
 
-#donate_align input:checked + span {
+#radio_align input:checked + span {
     border:1px solid $seafoam_dark;
     height: 30px;
 }
 
 // Font Radio Button Styles
 
-#donate_font label {
+#radio_font label {
     float:left;
     width:60px;
-    margin-right: 5px;      
+    margin-right: 10px; 
+
+    &:nth-of-type(4n) {
+        margin-right: 0;
+    }    
 }
 
-#donate_font label span {
+#radio_font label span {
     text-align:center;
     padding:5px 5px 5px 5px;
     display:block;
 }
 
-#donate_font label input {
+#radio_font label input {
     position:absolute;
     top:-100px;
 }
 
-#donate_font input:checked + span {
+#radio_font input:checked + span {
     background-color: $seafoam_dark;
     color:white;
 }
 
 // Font Size Radio Buttons
 
-#donate_fontsize label {
+#radio_fontsize label {
     display: inline-block;
-    margin-right: 5px;      
+    margin-right: 15px; 
+    margin-top: -20px;    
 }
 
-#donate_fontsize label span {
+#radio_fontsize label span {
     text-align:center;
     display:block;
 }
 
-#donate_fontsize label input {
+#radio_fontsize label input {
     position:absolute;
     top:-100px;
 }
 
-#donate_fontsize input:checked + span {
+#radio_fontsize input:checked + span {
 
     color:$seafoam_dark;
 }
 
 
-
-// Show Page 
-
-.card_box {
-    background-color: white;
-    // margin-right: $gutter_width;
-    height: 288px;
-    width: 432px;
-    border: 2px solid black;
-    padding: 8px 8px 8px 8px;
-
-    word-break: normal;}
-
-.export {
-
-}
-
-.page_center {
-    width: 960px;
-    max-width: 960;
-    margin: 0 auto;
-}
-    
+  
