@@ -1,21 +1,21 @@
+<div class="page_center">
 
-<div class="card_box">
-	
-	<div class="<%= @quote.template %>">
+	<div class="show_left">
+		<div class="card_box_show">		
+			<div class="<%= @quote.template %>">
+				<div class="<%= @quote.color %> <%= @quote.font_size %> <%= @quote.font %> <%= @quote.alignment %>" >
+					<% current_quote = simple_format(@quote.content) %>
+					<%= current_quote %>
+				</div>	
+			</div>	
+		</div>
+	</div>
 
-		<div class="<%= @quote.color %> <%= @quote.font_size %> <%= @quote.font %> <%= @quote.alignment %>" >
-			<% current_quote = simple_format(@quote.content) %>
-			<%= current_quote %>
 
-		</div>	
-
-	</div>	
+	<div class="show_right">
+		<div class="export">
+			<%= link_to "Export to PDF", download_quote_url(:quote => @quote, format: 'pdf', :class => "export_to_pdf") %>
+		</div>
+	</div>
 
 </div>
-
-
-<div class="export">
-	<%= link_to "Export to PDF", download_quote_url(:quote => @quote, format: 'pdf', :class => "export_to_pdf") %>
-</div>
-
-

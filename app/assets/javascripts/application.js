@@ -26,8 +26,14 @@ card.filter('newlines', function($sce) {
 });
 
 card.controller("CardCtrl", function ($scope) {
+	$scope.color = 'black'; 
+	$scope.fontSize = 'normal';
+	$scope.color = 'black';
+	$scope.fontFamily = 'georgia';
+	$scope.textAlign = 'left';
+
+	
 
 
-
-});
+});	
 

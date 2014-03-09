@@ -1,3 +1,4 @@
+
 	<section class="profile_layout">
 		<div class="welcome_text">
 			<h2>hello <%= @user.first_name %>,</h2>
@@ -11,18 +12,19 @@
 	</section>
 
     <section class="profile_layout">
+    	
 		
 		<% @user.quotes.each do |quote| %>
+		<div class="profile_columns">
 	       
-	        <div class="card_box">
+	        <div class="card_box_profile">
 				<div class="<%= quote.color %> <%= quote.font_size %> <%= quote.font %> <%= quote.alignment %>" >
 					<% current_quote = simple_format(quote.content) %>
-					<%= current_quote %>
-				
+					<%= current_quote %>	
 				</div>	
 			</div>
-			<% end %>
-	 
+		 </div>
+		 <% end %>
 	</section>
-	
+
 
