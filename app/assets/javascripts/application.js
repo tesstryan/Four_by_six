@@ -25,7 +25,7 @@ card.filter('newlines', function($sce) {
     };
 });
 
-card.controller("CardCtrl", function ($scope) {
+card.controller("CardCtrl", ['$scope', function ($scope) {
 	$scope.color = 'black'; 
 	$scope.fontSize = 'normal';
 	$scope.color = 'black';
@@ -35,5 +35,5 @@ card.controller("CardCtrl", function ($scope) {
 	
 
 
-});	
+}]);	
 
