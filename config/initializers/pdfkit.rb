@@ -1,12 +1,12 @@
 PDFKit.configure do |config|
   # config.wkhtmltopdf = '/Users/tesstryan/.rvm/gems/ruby-2.0.0-p247/bin/wkhtmltopdf'
-  config.wkhtmltopdf = Rails.root.join('bin', 'wkhtmltopdf').to_s
+  # config.wkhtmltopdf = Rails.root.join('bin', 'wkhtmltopdf').to_s
   config.default_options = {
     :page_size => 'Letter',
     :print_media_type => true
   }
   # Use only if your external hostname is unavailable on the server.
-  config.root_url = "http://fourbysix.herokuapp.com" 
+  config.root_url = "http://localhost" 
 
 end 
 
