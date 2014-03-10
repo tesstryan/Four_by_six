@@ -1,6 +1,6 @@
 PDFKit.configure do |config|
   # config.wkhtmltopdf = '/Users/tesstryan/.rvm/gems/ruby-2.0.0-p247/bin/wkhtmltopdf'
-  config.wkhtmltopdf = `which wkhtmltopdf`
+  config.wkhtmltopdf = '/Users/tesstryan/.rvm/gems/ruby-2.0.0-p247/bin/wkhtmltopdf'
   config.default_options = {
     :page_size => 'Letter',
     :print_media_type => true
