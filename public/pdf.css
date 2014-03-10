@@ -1,0 +1,101 @@
+@media print {
+
+	a {display:none;}
+
+	nav {display:none;}  
+
+}
+
+/*card design*/
+
+.red {
+  color: #de5a41;
+}
+
+.blue {
+  color: #a1d5d6;
+}
+
+.yellow {
+  color: #fbcf59;
+}
+
+.green {
+  color: #c0e1c0;
+}
+
+.white {
+  color: white;
+}
+
+.gray {
+  color: #cccbcb;
+}
+
+.teeny {
+  font-size: 10px;
+}
+
+.small {
+  font-size: 15px;
+}
+
+.normal {
+  font-size: 25px;
+}
+
+.big {
+  font-size: 40px;
+}
+
+.bigger {
+  font-size: 70px;
+}
+
+.gigantic {
+  font-size: 150px;
+  line-height: 130px;
+}
+
+.sail {
+  font-family: 'Sail', cursive;
+}
+
+.arial {
+  font-family: Arial;
+}
+
+.georgia {
+  font-family: Georgia;
+}
+
+.lato {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.lobster {
+  font-family: 'Lobster Two', cursive;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+
+/*.card_box {
+  background-color: white;
+  height: 288px;
+  width: 432px;
+  border: 1px solid black;
+  padding: 0px 0px 0px 0px;
+  word-break: normal;
+}*/
