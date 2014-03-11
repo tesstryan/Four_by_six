@@ -105,6 +105,7 @@ $colorbox_height: 25px;
 
 body {
     background-color: white;
+
 }
 
 .wrap {
@@ -125,11 +126,6 @@ body {
 
 // Navigation Styling 
 
-.top_nav_color {
-    width: 100%;
-    height: 50px;
-    background-color: white;
-}
 
 nav {
     font-size: 0;
@@ -199,48 +195,6 @@ nav {
     }
 }
 
-footer {
-    font-size: 0;
-    font-family: 'Lato', sans-serif;
-    border-top: 1px solid $darkgray;
-    position:absolute;
-
-    bottom:0;
-    width:100%;
-    height:30px;   /* Height of the footer */
-
-    .nav_offset {
-        @include offset(7);
-    }
-
-    .nav_logo {
-        @include columnify(3);
-        text-align: right;
-    }
-
-    a {
-        margin-top: 8px;
-        text-decoration: none;
-        display: inline-block;
-        background:white;
-        color: $seafoam_dark;
-        font-size: 10px;
-        @include columnify(2);
-        margin-right: $gutter_width;
-        text-align: left;
-            &:hover {
-                text-decoration: none;
-                color: $seafoam_nav;
-            }
-            &:visited {
-                text-decoration: none;
-            }
-            &:nth-of-type(4n) {
-                margin-right: 0;
-            }        
-    }
-}
-
 // End Navigation Styling
 
 // Homepage Styling
@@ -300,7 +254,7 @@ footer {
           margin-top: 80px;
           padding: 20px 40px;
           width: 350px;
-          height: 325px;
+          // height: 325px;
           text-align: center;
         
 
@@ -375,7 +329,6 @@ footer {
 
 .layout {
     font-size: 0;
-
    
         
     div {

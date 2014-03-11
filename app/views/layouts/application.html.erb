@@ -4,7 +4,7 @@
   <title>Four by Six</title>
   <%= stylesheet_link_tag 'application', :media => "all" %>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="http://unslider.com/unslider.min.js"></script>
+
   <%= javascript_include_tag "application" %>
   <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic' rel='stylesheet' type='text/css'>
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -14,7 +14,6 @@
 </head>
 <body ng-controller="CardCtrl">
 
-	<div class="top_nav_color">
 		 
 		 <div class="wrap">
 	    	<nav>
@@ -34,18 +33,12 @@
 
 			<%= yield %>
 		
-		</div>
+	</div>
 
 	
 
-    <footer>
-    	<a href="#" class="nav_link">Terms of Use</a>
-        <a href="#" class="nav_link">Privacy Notice</a>
-        <a href="#" class="nav_link">Contact</a> 
-        <a href="#" class="nav_logo nav_offset">Four by Six © 2014 </a>
-    </footer>
 
-</div>
+	
 
 </body>
 </html>
