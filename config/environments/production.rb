@@ -22,6 +22,18 @@ FourBySix::Application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = false
 
+  # for devise, add it to production when ready to deploy.
+  config.action_mailer.default_url_options = { :host => 'fourbysix.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'gmail.com',
+  user_name:            'USERNAME',
+  password:             'PASSWORD',
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = Uglifier.new(mangle: false)
   # config.assets.css_compressor = :sass
