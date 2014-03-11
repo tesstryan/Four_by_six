@@ -5,7 +5,7 @@ FourBySix::Application.routes.draw do
   resources :users, :only => [:show]
 
   get "welcome/index"
-  root 'welcome#index'
+  root 'quotes#index'
   
   get '/download' => 'quotes#download', :as => 'download_quote'
   
