@@ -23,13 +23,14 @@ FourBySix::Application.configure do
   config.serve_static_assets = false
 
   # for devise, add it to production when ready to deploy.
-  config.action_mailer.default_url_options = { :host => 'fourbysix.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'http://fourbysix.herokuapp.com/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   address:              'smtp.gmail.com',
   port:                 587,
-  user_name:            'USERNAME',
-  password:             'PASSWORD',
+  domain:               'gmail.com',
+  user_name:            ENV['USERNAME'],
+  password:             ENV['PASSWORD'],
   authentication:       'plain',
   enable_starttls_auto: true  }
 

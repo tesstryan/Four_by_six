@@ -16,8 +16,8 @@ FourBySix::Application.configure do
   address:              'smtp.gmail.com',
   port:                 587,
   domain:               'gmail.com',
-  user_name:            'USERNAME',
-  password:             'PASSWORD',
+  user_name:            ENV['USERNAME'],
+  password:             ENV['PASSWORD'],
   authentication:       'plain',
   enable_starttls_auto: true  }
 
