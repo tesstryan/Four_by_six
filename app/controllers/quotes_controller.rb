@@ -68,11 +68,7 @@ class QuotesController < ApplicationController
   end
 
   def download
-    # PDFKit.new takes the HTML and any options for wkhtmltopdf
-    # run `wkhtmltopdf --extended-help` for a full list of options
     @quote = Quote.find(params[:quote])
-    # raise @quote.inspect 
-    # html = "<h1>hello world</h1>"
     html = render_to_string(action: quote_path(@quote), layout: 'application', template: 'quotes/show')
     kit = PDFKit.new(html)
     kit.stylesheets << "#{Rails.root}/public/pdf.css"

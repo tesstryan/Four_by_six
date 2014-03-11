@@ -97,8 +97,11 @@ $colorbox_height: 25px;
 %container {
     margin: 0 auto;
     max-width: $max_width;
+    min-height: 100%;
+    position: relative;
     // background:#bbb;
 }
+
 
 body {
     background-color: white;
@@ -198,7 +201,13 @@ nav {
 
 footer {
     font-size: 0;
-    border-top: 1px solid black;
+    font-family: 'Lato', sans-serif;
+    border-top: 1px solid $darkgray;
+    position:absolute;
+
+    bottom:0;
+    width:100%;
+    height:30px;   /* Height of the footer */
 
     .nav_offset {
         @include offset(7);
@@ -214,13 +223,14 @@ footer {
         text-decoration: none;
         display: inline-block;
         background:white;
+        color: $seafoam_dark;
         font-size: 10px;
         @include columnify(2);
         margin-right: $gutter_width;
         text-align: left;
             &:hover {
                 text-decoration: none;
-                color: blue;
+                color: $seafoam_nav;
             }
             &:visited {
                 text-decoration: none;
@@ -447,6 +457,7 @@ footer {
                 padding: 8px 8px 8px 8px;
                 word-break: normal;
                 background-color: white;
+                overflow: hidden;
 
             .start_creating {
                 text-align: center;
@@ -499,6 +510,7 @@ footer {
                 -webkit-transform:scale(0.5,0.5);
                 border: 1px solid white;
                 background-color: white;
+                overflow:hidden;
                 vertical-align: top;
                 position: relative;
                 left: -102px;
