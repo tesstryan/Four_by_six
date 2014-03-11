@@ -29,7 +29,7 @@ card.controller("CardCtrl", ['$scope', function ($scope) {
 	$scope.color = 'black'; 
 	$scope.fontSize = 'normal';
 	$scope.color = 'black';
-	$scope.fontFamily = 'georgia';
+	$scope.fontFamily = 'playfair';
 	$scope.textAlign = 'left';
 
 	
