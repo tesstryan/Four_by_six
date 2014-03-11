@@ -777,6 +777,7 @@ fieldset #radio_align {
     float:left;
     width:60px;
     margin-right: 5px; 
+    margin-bottom: 10px;
 
     &:nth-of-type(4n) {
         margin-right: 0;
@@ -804,12 +805,12 @@ fieldset #radio_align {
 #radio_fontsize label {
     display: inline-block;
     margin-right: 15px; 
-    margin-top: -20px;    
+    margin-top: -33px;    
 }
 
 #radio_fontsize label span {
     text-align:center;
-    display:block;
+    
 }
 
 #radio_fontsize label input {
