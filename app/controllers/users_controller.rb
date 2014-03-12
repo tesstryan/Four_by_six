@@ -12,17 +12,17 @@ class UsersController < ApplicationController
   # def new
   # end
 
-  # def create
-  #   @user = User.new
-  #   @user.first_name = params[:first_name]
-  #   @user.last_name = params[:last_name]
+  def create
+    @user = User.new
+    @user.first_name = params[:first_name]
+    @user.last_name = params[:last_name]
 
-  #   if @user.save
-  #     redirect_to users_url, notice: "User created successfully."
-  #   else
-  #     render 'new'
-  #   end
-  # end
+    if @user.save
+      redirect_to users_url, notice: "User created successfully."
+    else
+      render 'new'
+    end
+  end
 
   # def edit
   #   @user = User.find_by(id: params[:id])
