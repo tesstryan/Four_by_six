@@ -5,7 +5,9 @@
 	nav {display:none;} 
 	
 
-  
+  	li {display:none;}
+
+  	h4 {display:none;}
 
 }
 
@@ -81,29 +83,28 @@
   color: #cccbcb;
 }
 
-.teeny {
-  font-size: 10px;
-}
+.teeny {font-size: 10px;}
 
 .small {
-  font-size: 15px;
+    font-size: 15px;
 }
 
 .normal {
-  font-size: 25px;
+    font-size: 25px;
+    line-height: 30px;
 }
 
-.big {
-  font-size: 40px;
-}
+.big { font-size: 40px;
+    line-height: 45px;}
 
 .bigger {
-  font-size: 70px;
+    font-size: 70px;
+    line-height: 70px;
 }
 
 .gigantic {
-  font-size: 150px;
-  line-height: 130px;
+    font-size: 150px;
+    line-height: 130px;
 }
 
 .sail {
@@ -139,12 +140,14 @@ font-family: 'sancreekregular';
 }
 
   .card_box_show {
-        margin-top: 40px;
-        height: 384px;
-        width: 576px;
+        margin-top: 1.25in;
+        margin-left: 1.25in;
+        margin-right: 1.25in;
+        marks: cross crop;
+        height: 4in;
+        width: 6in;
         border: 1px solid black;
         padding: 0px 8px 8px 8px;      
-        margin-bottom: 20px;
         overflow: hidden;
     }
 

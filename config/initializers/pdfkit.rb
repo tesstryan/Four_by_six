@@ -3,7 +3,11 @@ PDFKit.configure do |config|
   # config.wkhtmltopdf = Rails.root.join('bin', 'wkhtmltopdf').to_s
   config.default_options = {
     :page_size => 'Letter',
-    :print_media_type => true
+    :print_media_type => true,
+    :margin_top => '1.00in',
+    :margin_right => '1.00in',
+    :margin_bottom => '1.00in',
+    :margin_left => '1.00in',
   }
   # Use only if your external hostname is unavailable on the server.
   config.root_url = "http://localhost" 
