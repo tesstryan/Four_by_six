@@ -73,7 +73,7 @@ class QuotesController < ApplicationController
     kit = PDFKit.new(html)
     kit.stylesheets << "#{Rails.root}/public/pdf.css"
     # kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/pdf.css"
-    send_data(kit.to_pdf, filename: "fourbysix", type: "application/pdf") 
+    send_data(kit.to_pdf, filename: "fourbysix#{@quote.id}", type: "application/pdf") 
 
   end
 end

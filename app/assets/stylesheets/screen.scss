@@ -339,9 +339,9 @@ nav {
         } 
 
     .left_half {
-        @include offset(1);
+        @include offset(.5);
         @include columnify(5);
-        margin-right: $gutter_width;
+        margin-right: $gutter_width *2;
         margin-bottom: 20px;
         font-size: 15px;
         display: inline-block;
@@ -393,8 +393,8 @@ nav {
 
     .right_half {
         margin-bottom: 60px;
-        @include offset(1);
-        @include columnify(7);
+        @include offset(0);
+        @include columnify(10);
         margin-right: $gutter_width;
         margin-bottom: 20px;
         font-size: 15px;
@@ -402,10 +402,8 @@ nav {
         
 
         .card_box {
-                -webkit-transform:scale(1.2,1.2);
-                margin-top: 28px;
-                height: 288px;
-                width: 432px;
+                height: 384px;
+                width: 576px;
                 border: 1px solid white;
                 padding: 8px 8px 8px 8px;
                 word-break: normal;
@@ -468,9 +466,9 @@ nav {
                 position: relative;
                 left: -102px;
                 top: -60px;
-                height: 288px;
+                height: 384px;
                 padding: 8px 8px 8px 8px;
-                width: 432px;
+                width: 576px;
                 word-break: normal;
                 text-align: right;
 
@@ -503,20 +501,24 @@ nav {
     .show_right {
         @include offset(1);
         @include columnify(4);
-        display: inline-block;
+        display: block;
+        float: right;
     }
 
     .card_box_show {
         margin-top: 20px;
         background-color: white;
         // margin-right: $gutter_width;
-        height: 288px;
-        width: 432px;
+        height: 384px;
+        width: 576px;
         border: 1px solid white;
-        padding: 8px 8px 8px 8px;
+        padding: 10px 8px 8px 8px;
         word-break: normal; 
         margin-bottom: 20px;
+        overflow: hidden;
     }
+
+
 
     .export {
     font-size: 15px;
@@ -638,6 +640,8 @@ nav {
 .center {text-align: center }
 
 .right {text-align: right }
+
+
 
 // Radio button styling
 

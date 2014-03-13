@@ -2,11 +2,11 @@
 
 	<div class="show_left">
 		<div class="card_box_show">		
-			<div class="<%= @quote.template %>">
+		
 				<div class="<%= @quote.color %> <%= @quote.font_size %> <%= @quote.font %> <%= @quote.alignment %>" >
-					<% current_quote = simple_format(@quote.content) %>
+					<% current_quote = @quote.content.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %>
 					<%= current_quote %>
-				</div>	
+			
 			</div>	
 		</div>
 	</div>

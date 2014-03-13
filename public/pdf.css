@@ -2,7 +2,10 @@
 
 	a {display:none;}
 
-	nav {display:none;}  
+	nav {display:none;} 
+	
+
+  
 
 }
 
@@ -135,14 +138,15 @@ font-family: 'sancreekregular';
   text-align: right;
 }
 
+  .card_box_show {
+        margin-top: 40px;
+        height: 384px;
+        width: 576px;
+        border: 1px solid black;
+        padding: 0px 8px 8px 8px;      
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
 
-/*.card_box {
-  background-color: white;
-  height: 288px;
-  width: 432px;
-  border: 1px solid black;
-  padding: 0px 0px 0px 0px;
-  word-break: normal;
-}*/
 
 

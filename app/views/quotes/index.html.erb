@@ -1,106 +1,103 @@
-
-
 <div class="create_page">
 
-<div class="create_your_own">
-  
-  <h2>Create your own.</h2>
-
-</div>
-
-
-<section class="layout">
-
-  <div class="left_half">
-    <%= form_tag(quotes_url, method: 'post') do %>
-
-<!--     <h4 class="option_header one">Choose template</h4>
-
-    <ul>
-      <li><input type="radio" name ="template" value="blank" ng-model='template'> Blank </li>
-      <li><input type="radio" name ="template" value="america" ng-model='template'> America </li>
-    </ul> -->
-<!-- End radio buttons for templates -->
-
-  <!--   <h4 class="option_header">Text:</h4> -->
-    
-    <fieldset>
-      <textarea type="text" ng-model="cardText" ng-trim="false" placeholder="Words go here..." name="content" class='input_quote'></textarea>
-    </fieldset>
-
-    <!-- <h4 class="option_header">Font Size</h4> -->
-
-      <fieldset>
-        <div id="radio_fontsize">
-        <!--  <label><input type="radio" name ="font_size" id="teeny" value="teeny" ng-model='fontSize'><span class="teeny">a</span></label>
-         <label><input type="radio" name ="font_size" value="small" ng-model='fontSize'><span class="small">a</span></label> -->
-         <label><input type="radio" name ="font_size" value="normal" ng-model='fontSize'><span class="normal">a</span></label>
-         <label><input type="radio" value="big" name ="font_size" ng-model='fontSize'><span class="big">a</span></label>
-         <label><input type="radio" value="bigger" name ="font_size" ng-model='fontSize'><span class="bigger">a</span></label>
-         <!-- <label><input type="radio" value="gigantic" name ="font_size" ng-model='fontSize'><span class="gigantic">a</span></label> -->
-       </div>
-      </fieldset>
-
-   <!--  <h4 class="option_header color">Choose Font</h4> -->
-      <fieldset>
-        <div id="radio_font">
-
-           <label><input type="radio" name ="font" value="playfair" ng-model='fontFamily'>
-           <span class="playfair"> Playfair </span></label>
-
-           <label><input type="radio" name ="font" value="sail" ng-model='fontFamily'>
-           <span class="sail"> Sail </span></label>
-
-           <label><input type="radio" name ="font" value="lato" ng-model='fontFamily'>
-           <span class="lato"> Lato </span></label>
-
-           <label><input type="radio" name ="font" value="sancreek" ng-model='fontFamily'>
-           <span class="sancreek"> Sancreek </span></label>
-        </div>
-      </fieldset>      
-
-  <!--   <h4 class="option_header color">Font color: {{color}}</h4> -->
-      <fieldset>
-        <div id="radio_color">
-        <label class="black"><input type="radio" name="color" value="black" ng-model="color"><span></span></label>
-        <!-- <label class="white"><input type="radio" name="color" value="white" ng-model="color"><span></span></label> -->
-        <label class="red"><input type="radio" name="color" value="red" ng-model="color"><span></span></label>
-        <label class="blue"><input type="radio" name="color" value="blue" ng-model="color"><span></span></label>
-        <label class="green"><input type="radio" name="color" value="green" ng-model="color"><span></span></label>
-        <label class="gray"><input type="radio" name="color" value="gray" ng-model="color"><span></span></label>
-        <label class="yellow"><input type="radio" name="color" value="yellow" ng-model="color"><span></span></label>
-        </div>
-      </fieldset>
-
-    <!-- h4 class="option_header color">Alignment</h4> -->
-
-      <fieldset>
-        <div id="radio_align">
-           <label><input type="radio"  name ="alignment" value="left" ng-model='textAlign'><span> <i class="fa fa-align-left fa-lg"></i></span></label>
-           <label><input type="radio"  name ="alignment" value="center" ng-model='textAlign'><span> <i class="fa fa-align-center fa-lg"></i></span></label>
-           <label><input type="radio"  name ="alignment" value="right" ng-model='textAlign'><span><i class="fa fa-align-right fa-lg"></i></span></label>
-        </div>
-      </fieldset>
-
-    <div>
-      <%= submit_tag "Create card", class: "create_card_button" %>
-    </div>
-
-    <% end %>
+  <div class="create_your_own">   
+    <h2>Create your own.</h2>
   </div>
 
 
+  <section class="layout">
 
-  <!-- Right Half of page -->
+    <div class="left_half">
+      <%= form_tag(quotes_url, method: 'post') do %>
 
-  <div class="right_half">
-    <div class="card_box" ng-class="template">
-        
-        <div ng-class="[color, template, fontSize, fontFamily, textAlign]" ng-bind-html="cardText | newlines" ></div> 
+  <!--     <h4 class="option_header one">Choose template</h4>
+
+      <ul>
+        <li><input type="radio" name ="template" value="blank" ng-model='template'> Blank </li>
+        <li><input type="radio" name ="template" value="america" ng-model='template'> America </li>
+      </ul> -->
+  <!-- End radio buttons for templates -->
+
+    <!--   <h4 class="option_header">Text:</h4> -->
       
-    </div>
-  </div>
+      <fieldset>
+        <textarea type="text" ng-model="cardText" ng-trim="false" placeholder="Words go here..." name="content" class='input_quote'></textarea>
+      </fieldset>
 
-</section>
+      <!-- <h4 class="option_header">Font Size</h4> -->
+
+        <fieldset>
+          <div id="radio_fontsize">
+          <!--  <label><input type="radio" name ="font_size" id="teeny" value="teeny" ng-model='fontSize'><span class="teeny">a</span></label>
+           <label><input type="radio" name ="font_size" value="small" ng-model='fontSize'><span class="small">a</span></label> -->
+           <label><input type="radio" name ="font_size" value="normal" ng-model='fontSize'><span class="normal">a</span></label>
+           <label><input type="radio" value="big" name ="font_size" ng-model='fontSize'><span class="big">a</span></label>
+           <label><input type="radio" value="bigger" name ="font_size" ng-model='fontSize'><span class="bigger">a</span></label>
+           <!-- <label><input type="radio" value="gigantic" name ="font_size" ng-model='fontSize'><span class="gigantic">a</span></label> -->
+         </div>
+        </fieldset>
+
+     <!--  <h4 class="option_header color">Choose Font</h4> -->
+        <fieldset>
+          <div id="radio_font">
+
+             <label><input type="radio" name ="font" value="playfair" ng-model='fontFamily'>
+             <span class="playfair"> Playfair </span></label>
+
+             <label><input type="radio" name ="font" value="sail" ng-model='fontFamily'>
+             <span class="sail"> Sail </span></label>
+
+             <label><input type="radio" name ="font" value="lato" ng-model='fontFamily'>
+             <span class="lato"> Lato </span></label>
+
+             <label><input type="radio" name ="font" value="sancreek" ng-model='fontFamily'>
+             <span class="sancreek"> Sancreek </span></label>
+          </div>
+        </fieldset>      
+
+    <!--   <h4 class="option_header color">Font color: {{color}}</h4> -->
+        <fieldset>
+          <div id="radio_color">
+          <label class="black"><input type="radio" name="color" value="black" ng-model="color"><span></span></label>
+          <!-- <label class="white"><input type="radio" name="color" value="white" ng-model="color"><span></span></label> -->
+          <label class="red"><input type="radio" name="color" value="red" ng-model="color"><span></span></label>
+          <label class="blue"><input type="radio" name="color" value="blue" ng-model="color"><span></span></label>
+          <label class="green"><input type="radio" name="color" value="green" ng-model="color"><span></span></label>
+          <label class="gray"><input type="radio" name="color" value="gray" ng-model="color"><span></span></label>
+          <label class="yellow"><input type="radio" name="color" value="yellow" ng-model="color"><span></span></label>
+          </div>
+        </fieldset>
+
+      <!-- h4 class="option_header color">Alignment</h4> -->
+
+        <fieldset>
+          <div id="radio_align">
+             <label><input type="radio"  name ="alignment" value="left" ng-model='textAlign'><span> <i class="fa fa-align-left fa-lg"></i></span></label>
+             <label><input type="radio"  name ="alignment" value="center" ng-model='textAlign'><span> <i class="fa fa-align-center fa-lg"></i></span></label>
+             <label><input type="radio"  name ="alignment" value="right" ng-model='textAlign'><span><i class="fa fa-align-right fa-lg"></i></span></label>
+          </div>
+        </fieldset>
+
+
+      <div>
+        <%= submit_tag "Create card", class: "create_card_button" %>
+      </div>
+
+      <% end %>
+    </div>
+
+
+
+    <!-- Right Half of page -->
+
+    <div class="right_half">
+      <div class="card_box" ng-class="template">
+          
+          <div ng-class="[color, template, fontSize, fontFamily, textAlign, textPlacement]" ng-bind-html="cardText | newlines" ></div> 
+        
+      </div>
+    </div>
+
+  </section>
 
 </div>
