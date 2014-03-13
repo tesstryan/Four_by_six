@@ -92,20 +92,18 @@
 
 .normal {
     font-size: 25px;
-    line-height: 30px;
 }
 
 .big { font-size: 40px;
-    line-height: 45px;}
+}
 
 .bigger {
     font-size: 70px;
-    line-height: 70px;
 }
 
 .gigantic {
     font-size: 150px;
-    line-height: 130px;
+
 }
 
 .sail {
@@ -147,7 +145,7 @@ font-family: 'sancreekregular';
         height: 4in;
         width: 6in;
         border: 1px dashed gray;
-        padding: 0px 8px 8px 8px;      
+        padding: 0px 10px 10px 10px;      
         overflow: hidden;
     }
 

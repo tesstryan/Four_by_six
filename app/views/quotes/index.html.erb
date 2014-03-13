@@ -78,6 +78,15 @@
           </div>
         </fieldset>
 
+ <!--        <fieldset>
+          <div id="radio_outline">
+             <label><input type="radio" name ="outline" value="outline" ng-model='cardOutline'><span> Outline </span></label>
+
+             <label><input type="radio" name ="outline" value="no_outline" ng-model='cardOutline'><span> No outline </span></label>
+          </div>
+        </fieldset>   
+     -->
+
 
       <div>
         <%= submit_tag "Create card", class: "create_card_button" %>
@@ -91,10 +100,9 @@
     <!-- Right Half of page -->
 
     <div class="right_half">
-      <div class="card_box" ng-class="template">
-          
-          <div ng-class="[color, template, fontSize, fontFamily, textAlign, textPlacement]" ng-bind-html="cardText | newlines" ></div> 
-        
+      <div class="card_box" ng-class="template"> 
+          <div ng-class="[color, template, fontSize, fontFamily, textAlign, textPlacement]" ng-bind-html="cardText | newlines" >      
+          </div> 
       </div>
     </div>
 

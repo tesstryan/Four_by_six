@@ -38,27 +38,27 @@ class QuotesController < ApplicationController
     end
   end
 
-  def edit
-    @quote = Quote.find_by(id: params[:id])
-  end
+  # def edit
+  #   @quote = Quote.find_by(id: params[:id])
+  # end
 
-  def update
-    @quote = Quote.find_by(id: params[:id])
-    @quote.content = params[:content]
-    @quote.template = params[:template]
-    @quote.color = params[:color]
-    @quote.font_size = params[:font_size]
-    @quote.font = params[:font]  
-    @quote.alignment = params[:alignment]    
-    @quote.author = params[:author]
-    @quote.user_id = params[:user_id]
+  # def update
+  #   @quote = Quote.find_by(id: params[:id])
+  #   @quote.content = params[:content]
+  #   @quote.template = params[:template]
+  #   @quote.color = params[:color]
+  #   @quote.font_size = params[:font_size]
+  #   @quote.font = params[:font]  
+  #   @quote.alignment = params[:alignment]    
+  #   @quote.author = params[:author]
+  #   @quote.user_id = params[:user_id]
 
-    if @quote.save
-      redirect_to quotes_url
-    else
-      render 'edit'
-    end
-  end
+  #   if @quote.save
+  #     redirect_to quotes_url
+  #   else
+  #     render 'edit'
+  #   end
+  # end
 
   def destroy
     @quote = Quote.find_by(id: params[:id])
@@ -74,6 +74,6 @@ class QuotesController < ApplicationController
     kit.stylesheets << "#{Rails.root}/public/pdf.css"
     # kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/pdf.css"
     send_data(kit.to_pdf, filename: "fourbysix#{@quote.id}", type: "application/pdf") 
-
   end
+
 end
