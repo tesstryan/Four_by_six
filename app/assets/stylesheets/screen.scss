@@ -491,16 +491,21 @@ nav {
     background-color: $seafoam_nav;
     padding-bottom: 50px;
     padding-top: 50px;
-    display: inline-block;
 
     .show_left {
         @include offset(1);
-        @include columnify(13);
+        @include columnify(10);
+        margin-right: $gutter_width;
         display: inline-block;
+        vertical-align: top;
     }
 
     .show_right {
-
+        @include columnify(4);
+        display: inline-block;
+        margin-right: 0px;
+        vertical-align: top;
+        margin-top: $gutter_width + 5px;
     }
 
     .card_box_show {
@@ -518,43 +523,52 @@ nav {
 
 
     .bottom_links {
-        width: 576px;
+        h4 {
+            font-size: 15px;
+            font-style: italic;
+            margin-bottom: 20px;}
 
-        li {display: inline-block;
-            margin-right: 25px;
-                &:nth-of-type(4n){
-                    margin-right: 0;
-                    }
+        li {
+            margin-bottom: 60px;
+
+            div {
+                margin-bottom: 30px;
             }
+        }
     }
 
 
 
     .export {
-        font-size: 14px;
-        padding: 8px;
-        background-color: $seafoam_dark;
-        width: 125px;
-        color: white;
-        text-align: center;
         font-family: 'Lato', sans-serif;
 
-        a {color: white;}
-
-        &:link {
+        a {
             color: white;
-        }
-
-        &:active {
+            font-size: 14px;
+            padding: 8px;
+            background-color: $seafoam_dark;
+            width: 125px;
             color: white;
-        }
+            text-align: center;
+                &:link {
+                    color: white;
+                    text-decoration: none;
+                }
 
-        &:visited {
-            color: white;
-        }
+                &:active {
+                    color: white;
+                    text-decoration: none;
+                }
 
-        &:hover {
-         color: darken($darkgray, 50%); 
+                &:visited {
+                    color: white;
+                    text-decoration: none;
+                }
+
+                &:hover {
+                 background-color: darken($seafoam_dark, 15%);
+                 text-decoration: none; 
+                }
         }
     }
 }
