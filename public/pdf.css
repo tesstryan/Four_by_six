@@ -9,6 +9,7 @@
 
   	h4 {display:none;}
 
+
 }
 
 
@@ -143,10 +144,9 @@ font-family: 'sancreekregular';
         margin-top: 1.25in;
         margin-left: 1.25in;
         margin-right: 1.25in;
-        marks: cross crop;
         height: 4in;
         width: 6in;
-        border: 1px solid black;
+        border: 1px dashed gray;
         padding: 0px 8px 8px 8px;      
         overflow: hidden;
     }
