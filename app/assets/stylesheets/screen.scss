@@ -494,10 +494,13 @@ nav {
     display: inline-block;
 
     .show_left {
-        @include offset(3);
-        @include columnify(8);
-        margin-right: $gutter_width;
+        @include offset(1);
+        @include columnify(13);
         display: inline-block;
+    }
+
+    .show_right {
+
     }
 
     .card_box_show {
@@ -514,15 +517,45 @@ nav {
     }
 
 
+    .bottom_links {
+        width: 576px;
+
+        li {display: inline-block;
+            margin-right: 25px;
+                &:nth-of-type(4n){
+                    margin-right: 0;
+                    }
+            }
+    }
+
+
 
     .export {
-    font-size: 15px;
+        font-size: 14px;
+        padding: 8px;
+        background-color: $seafoam_dark;
+        width: 125px;
+        color: white;
+        text-align: center;
+        font-family: 'Lato', sans-serif;
 
+        a {color: white;}
 
+        &:link {
+            color: white;
+        }
 
-    &:hover {
-     color: darken($darkgray, 50%); 
-    }
+        &:active {
+            color: white;
+        }
+
+        &:visited {
+            color: white;
+        }
+
+        &:hover {
+         color: darken($darkgray, 50%); 
+        }
     }
 }
   
