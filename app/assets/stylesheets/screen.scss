@@ -345,7 +345,8 @@ nav {
         margin-bottom: 20px;
         font-size: 15px;
         display: inline-block;
-        margin-bottom: 60px;
+        height: 384px;
+        margin-bottom: 75px;
         background-color: white;
         padding: 8px;
         text-align: center;
@@ -361,7 +362,7 @@ nav {
         }
 
         fieldset {
-            margin-bottom: 19px;
+            margin-bottom: 25px;
             text-align: center;
         }
 
@@ -493,16 +494,10 @@ nav {
     display: inline-block;
 
     .show_left {
-        @include offset(2);
+        @include offset(3);
         @include columnify(8);
         margin-right: $gutter_width;
         display: inline-block;
-    }
-    .show_right {
-        @include offset(1);
-        @include columnify(4);
-        display: block;
-        float: right;
     }
 
     .card_box_show {
