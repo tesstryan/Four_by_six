@@ -368,7 +368,7 @@ nav {
 
         .create_card_button {
             color: white; 
-            background-color: darken($darkgray, 20%);
+            background-color: $seafoam_dark;
             padding: 8px;
             padding-right: 30px;
             padding-left: 30px;
@@ -376,7 +376,7 @@ nav {
             border: 0;
         
             &:hover {
-               background-color: darken($darkgray, 50%); 
+               background-color: darken($seafoam_dark, 10%);; 
             }
 
         }
@@ -566,7 +566,7 @@ nav {
                 }
 
                 &:hover {
-                 background-color: darken($seafoam_dark, 15%);
+                 background-color: darken($seafoam_dark, 10%);
                  text-decoration: none; 
                 }
         }
