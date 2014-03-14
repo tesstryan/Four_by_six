@@ -23,6 +23,8 @@
 				  <div>
 				  <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "box_input" %></div>
 
+				  <div>
+				  <%= f.hidden_field :quote_id, value: params[:quote_id] %></div>
 				  <div><%= f.submit "Sign up", class: "sign_button"  %></div>
 				<% end %>
 

@@ -25,10 +25,9 @@ class QuotesController < ApplicationController
     @quote.alignment = params[:alignment] 
     @quote.author = params[:author]
 
+
     if current_user.present? 
       @quote.user_id = current_user[:id]
-    else
-      @quote.user_id = params[:user_id]
     end
 
     if @quote.save
@@ -37,6 +36,9 @@ class QuotesController < ApplicationController
       render 'new'
     end
   end
+
+
+
 
   # def edit
   #   @quote = Quote.find_by(id: params[:id])

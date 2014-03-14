@@ -25,10 +25,12 @@
 					<%= link_to "Export Card", download_quote_url(:quote => @quote, format: 'pdf', :class => "export_to_pdf") %>
 				</div></li>	
 
-				<h4>Save card to your profile</h4>
-				<li><div class="export">
-					<%= link_to "Save Card", download_quote_url(:quote => @quote, format: 'pdf', :class => "export_to_pdf") %>
-				</div></li>	
+				<% if current_user.nil? %>
+					<h4>Save card to your profile</h4>
+					<li><div class="export">
+						 <%= link_to "Save Card", new_user_registration_url(:quote_id => @quote.id), :class => "export_to_pdf" %> 
+					</div></li>	
+				<% end %>
 
 				<h4>Just want to make another?</h4>
 				<li><div class="export">
