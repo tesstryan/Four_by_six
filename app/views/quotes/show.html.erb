@@ -21,10 +21,6 @@
 					<%= link_to "Export to PDF", download_quote_url(:quote => @quote, format: 'pdf', :class => "export_to_pdf") %>
 				</div>
 
-				<div class="export">
-					<%= link_to "Export Card", download_quote_url(:quote => @quote, format: 'pdf', :class => "export_to_pdf") %>
-				</div></li>	
-
 				<% if current_user.nil? %>
 					<h4>Save card to your profile</h4>
 					<li><div class="export">

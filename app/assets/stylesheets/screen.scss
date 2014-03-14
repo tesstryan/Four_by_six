@@ -412,6 +412,7 @@ nav {
                 word-break: normal;
                 background-color: white;
                 overflow: hidden;
+                text-rendering: optimize-speed;
 
             .start_creating {
                 text-align: center;
@@ -520,6 +521,7 @@ nav {
         word-break: normal; 
         margin-bottom: 20px;
         overflow: hidden;
+        text-rendering: optimize-speed;
     }
 
 

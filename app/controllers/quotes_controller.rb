@@ -78,4 +78,5 @@ class QuotesController < ApplicationController
     send_data(kit.to_pdf, filename: "fourbysix#{@quote.id}", type: "application/pdf") 
   end
 
+
 end
