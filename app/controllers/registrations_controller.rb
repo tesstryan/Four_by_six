@@ -10,7 +10,6 @@ class RegistrationsController < Devise::RegistrationsController
 			quote = Quote.find_by_id(params[:user][:quote_id])
 			quote.user_id = current_user.id
 			quote.save
-			binding.pry
 		end
 	end
 
@@ -28,7 +27,6 @@ class RegistrationsController < Devise::RegistrationsController
 
 
 def after_sign_up_path_for(resource)
-	
 	if params[:user][:quote_id].present? 
 		quote_url(params[:user][:quote_id])
 	else 
