@@ -139,14 +139,14 @@ font-family: 'sancreekregular';
 }
 
   .card_box_show {
-        margin-top: 1.25in;
-        margin-left: 1.25in;
+        margin-top: 2in;
+        margin-left: 1in;
         margin-right: 1.25in;
         height: 4in;
         width: 6in;
-        border: 1px dashed gray;
+        /*border: 1px dashed gray;*/
         padding: 8px 8px 8px 8px;      
-        overflow: hidden;
+        /*overflow: hidden;*/
         text-rendering: optimize-speed;
     }
 

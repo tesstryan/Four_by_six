@@ -4,10 +4,13 @@ PDFKit.configure do |config|
   config.default_options = {
     :page_size => 'Letter',
     :print_media_type => true,
-    :margin_top => '1.00in',
-    :margin_right => '1.00in',
-    :margin_bottom => '1.00in',
-    :margin_left => '1.00in',
+    :margin_top => '0.00in',
+    :margin_right => '0.00in',
+    :margin_bottom => '0.00in',
+    :margin_left => '0.00in',
+    # :page_width => '6.00in',
+    # :page_height => '4.00in',
+
   }
   # Use only if your external hostname is unavailable on the server.
   config.root_url = "http://localhost" 
