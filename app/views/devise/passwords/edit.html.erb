@@ -1,24 +1,26 @@
-<section class="form">
-	<div class="form_layout">
-		<h2 class="sign_header">Password Reset</h2>
+<div class="wrap">
+  <section class="form">
+  	<div class="form_layout">
+  		<h2 class="sign_header">Password Reset</h2>
 
-	<div class="sign_input">
-		<p class="sign_text">Reset your password on this page.</p>
+  	<div class="sign_input">
+  		<p class="sign_text">Reset your password on this page.</p>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <p><%= devise_error_messages! %></p>
-  <%= f.hidden_field :reset_password_token %>
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+    <p><%= devise_error_messages! %></p>
+    <%= f.hidden_field :reset_password_token %>
 
-  <div>
-  <%= f.password_field :password, :autofocus => true, placeholder: "New Password" %></div>
+    <div>
+    <%= f.password_field :password, :autofocus => true, placeholder: "New Password" %></div>
 
-  <div>
-  <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %></div>
+    <div>
+    <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %></div>
 
-  <div><%= f.submit "Change my password", class: "sign_button" %></div>
-<% end %>
+    <div><%= f.submit "Change my password", class: "sign_button" %></div>
+  <% end %>
 
-<p class="other_text"><%= render "devise/shared/links" %></p>
-	</div>
-	</div>
-</section>
+  <p class="other_text"><%= render "devise/shared/links" %></p>
+  	</div>
+  	</div>
+  </section>
+</div>

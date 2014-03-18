@@ -13,24 +13,20 @@
 
 	<div class="show_right">
 		<div class="bottom_links">
-
-			
 			<ul>
-				<h4>Export Options</h4>
-				<li><div class="export">
-					<%= link_to "Export to PDF", download_quote_url(:quote => @quote, format: 'pdf', :class => "export_to_pdf") %>
+				
+				<li><h4>Export Options</h4><div class="export">
+					<%= link_to "Export to PDF", download_quote_url(:quote => @quote, format: 'pdf') %>
 				</div>
 
 				<% if current_user.nil? %>
-					<h4>Save card to your profile</h4>
-					<li><div class="export">
-						 <%= link_to "Save Card", new_user_registration_url(:quote_id => @quote.id), :class => "export_to_pdf" %> 
+					<li><h4>Save card to your profile</h4><div class="export">
+						 <%= link_to "Save Card", new_user_registration_url(:quote_id => @quote.id) %> 
 					</div></li>	
 				<% end %>
 
-				<h4>Just want to make another?</h4>
-				<li><div class="export">
-					<%= link_to "Make Another!", quotes_url, :class => "export_to_pdf" %>
+				<li><h4>Just want to make another?</h4><div class="export">
+					<%= link_to "Make Another!", quotes_url %>
 				</div></li>					
 			</ul>
 		</div>

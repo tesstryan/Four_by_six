@@ -1,33 +1,34 @@
+<div class="wrap">
+	<section class="form">
+		<div class="form_layout">
 
-<section class="form">
-	<div class="form_layout">
+			<h2 class="sign_header">Sign in</h2>
 
-		<h2 class="sign_header">Sign in</h2>
+			<div class="sign_input">
 
-		<div class="sign_input">
+				<p class="sign_text">Welcome back!</p>
 
-			<p class="sign_text">Welcome back!</p>
+				<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+				  <div>
+				  <%= f.email_field :email, :autofocus => true, placeholder: "Enter your e-mail address...", class: "box_input" %></div>
 
-			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-			  <div>
-			  <%= f.email_field :email, :autofocus => true, placeholder: "Enter your e-mail address...", class: "box_input" %></div>
+				  <div>
+				  <%= f.password_field :password, placeholder: "Password", class: "box_input" %></div>
 
-			  <div>
-			  <%= f.password_field :password, placeholder: "Password", class: "box_input" %></div>
+				  <% if devise_mapping.rememberable? -%>
+				    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
 
-			  <% if devise_mapping.rememberable? -%>
-			    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+				  <div><%= f.hidden_field :quote_id, value: params[:quote_id] %></div>
 
-			  <div><%= f.hidden_field :quote_id, value: params[:quote_id] %></div>
+				  <% end -%>
 
-			  <% end -%>
+				  <div><%= f.submit "Sign in", class: "sign_button" %></div>
+				<% end %>
 
-			  <div><%= f.submit "Sign in", class: "sign_button" %></div>
-			<% end %>
+				<p class="other_text">Need an account? <%= render "devise/shared/links" %></p>
 
-			<p class="other_text">Need an account? <%= render "devise/shared/links" %></p>
+			</div>
 
 		</div>
-
-	</div>
-</section>
+	</section>
+</div>

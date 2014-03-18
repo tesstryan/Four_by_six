@@ -1,4 +1,4 @@
-
+<div class="wrap">
 	<section class="profile_layout">
 		<div class="welcome_text">
 			<h2>hello <%= @user.first_name %>,</h2>
@@ -17,14 +17,16 @@
 		<% @user.quotes.each do |quote| %>
 		<div class="profile_columns">
 	       
-	        <div class="card_box_profile">
-				<div ng-trim="false" class="<%= quote.color %> <%= quote.font_size %> <%= quote.font %> <%= quote.alignment %>" >
-					<% current_quote = simple_format(quote.content) %>
-					<%= current_quote %>	
-				</div>	
-			</div>
+	       	<a href="<%= quote_url(quote.id) %>">
+		        <div class="card_box_profile">
+					<div ng-trim="false" class="<%= quote.color %> <%= quote.font_size %> <%= quote.font %> <%= quote.alignment %>">
+						<% current_quote = simple_format(quote.content) %>
+						<%= current_quote %>	
+					</div>	
+				</div>
+			</a>	
 		 </div>
+
 		 <% end %>
 	</section>
-
-
+</div>

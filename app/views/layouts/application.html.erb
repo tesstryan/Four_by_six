@@ -15,30 +15,29 @@
 <body ng-controller="CardCtrl">
 
 		 
-		 <div class="wrap">
-	    	<nav>
-		        <a href="/" class="nav_logo">four<span class="logo_bold">by</span>six</a>
+	 <div class="wrap">
+    	<nav>
+	        <a href="/" class="nav_logo">four<span class="logo_bold">by</span>six</a>
 
-		        <%= link_to "Create Your Own", quotes_url, class: "nav_link nav_offset" %>
-		        <%= link_to "Our Story", root_url, class: "nav_link" %>
-		        
-		        <% if user_signed_in? %>
-					<%= link_to 'My profile', current_user, class: "nav_link" %> 
-					<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_link" %>
-				<% else %>
-					<%= link_to "Sign up", new_user_registration_path, class: "nav_link" %>
-					<%= link_to "Login", new_user_session_path, class: "nav_link"%>
-				<% end %>
-	    	</nav>
-
-			<%= yield %>
+	        <%= link_to "Create Your Own", quotes_url, class: "nav_link nav_offset" %>
+	        <%= link_to "Our Story", root_url, class: "nav_link" %>
+	        
+	        <% if user_signed_in? %>
+				<%= link_to 'My profile', current_user, class: "nav_link" %> 
+				<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_link" %>
+			<% else %>
+				<%= link_to "Sign up", new_user_registration_path, class: "nav_link" %>
+				<%= link_to "Login", new_user_session_path, class: "nav_link"%>
+			<% end %>
+    	</nav>
+    </div>
 		
-	</div>
-
 	
 
+	<%= yield %>
 
-	
+
+
 
 </body>
 </html>

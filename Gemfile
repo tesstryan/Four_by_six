@@ -13,6 +13,8 @@ group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # Use SCSS for stylesheets
@@ -23,6 +25,7 @@ gem 'pdfkit'
 gem "wkhtmltopdf-binary"
 gem 'devise'
 gem 'angularjs-rails'
+
 # gem "wkhtmltopdf-heroku", "~> 1.0.0"
 
 # Use Uglifier as compressor for JavaScript assets

@@ -1,36 +1,38 @@
-<section class="form">
-	<div class="form_layout">
-		<h2 class="sign_header">Sign up</h2>
-			<div class="sign_input">
-				<p class="sign_text">Want to save the cards you love?<br>
-				Why not? It's free and easy!</p>
+<div class="wrap">
+	<section class="form">
+		<div class="form_layout">
+			<h2 class="sign_header">Sign up</h2>
+				<div class="sign_input">
+					<p class="sign_text">Want to save the cards you love?<br>
+					Why not? It's free and easy!</p>
 
-				<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-				  <%= devise_error_messages! %>
+					<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+					  <%= devise_error_messages! %>
 
-				   <div>
-				  <%= f.text_field :first_name, :autofocus => true, placeholder: "First Name", class: "box_input" %></div>
+					   <div>
+					  <%= f.text_field :first_name, :autofocus => true, placeholder: "First Name", class: "box_input" %></div>
 
-				  <div>
-				  <%= f.text_field :last_name, placeholder: "Last Name", class: "box_input" %></div>
+					  <div>
+					  <%= f.text_field :last_name, placeholder: "Last Name", class: "box_input" %></div>
 
-				  <div>
-				  <%= f.email_field :email, placeholder: "Enter your e-mail address...", class: "box_input" %></div>
+					  <div>
+					  <%= f.email_field :email, placeholder: "Enter your e-mail address...", class: "box_input" %></div>
 
-				  <div>
-				  <%= f.password_field :password, placeholder: "Password", class: "box_input" %></div>
+					  <div>
+					  <%= f.password_field :password, placeholder: "Password", class: "box_input" %></div>
 
-				  <div>
-				  <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "box_input" %></div>
+					  <div>
+					  <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "box_input" %></div>
 
-				  <div>
-				  <%= f.hidden_field :quote_id, value: params[:quote_id] %></div>
-				  
-				  <div><%= f.submit "Sign up", class: "sign_button"  %></div>
-				<% end %>
+					  <div>
+					  <%= f.hidden_field :quote_id, value: params[:quote_id] %></div>
+					  
+					  <div><%= f.submit "Sign up", class: "sign_button"  %></div>
+					<% end %>
 
-				<p class="other_text">Already signed up?<%= render "devise/shared/links" %></p>
+					<p class="other_text">Already signed up?<%= render "devise/shared/links" %></p>
 
-			</div>
-	</div>
-</section>
+				</div>
+		</div>
+	</section>
+</div>
