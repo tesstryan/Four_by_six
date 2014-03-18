@@ -5,9 +5,9 @@
 
 <div class="banner">
     <ul>
-        <li><%= image_tag("/assets/wood.jpg") %></li>
-        <li><%= image_tag("/assets/wood.jpg") %></li>
-        <li><%= image_tag("/assets/wood.jpg") %></li>
+        <li class="gray"><img src="/assets/welcome.png" alt="Welcome!"></li>
+        <li class="darkgray"><img src="/assets/second.png" alt="Four by Six"></li>
+        <li class="gray"><img src="/assets/three.png" alt="It's free."></li>
     </ul>
 </div>
 
@@ -16,9 +16,14 @@
 
 <script>
 $(function() {
-    $('.banner').unslider();
+	$('.banner').unslider({
+		speed: 1300,               //  The speed to animate each slide (in milliseconds)
+		delay: 6000,              //  The delay between slide animations (in milliseconds)
 
-});</script>
+	});             
+
+});
+</script>
 
 
 <div class="wrap">
@@ -29,19 +34,25 @@ $(function() {
 	<section class="homepage_layout">
 			<h3>it's easy...</h3>
 			<div class="one">
+				<i class="fa fa-laptop fa-5x"></i>
 				<h4>Type & Style.</h4>
 			</div>
 			<div class="two">
-				<h4>Create Card.</h4>
+				<i class="fa fa-exclamation fa-5x"></i>
+				<h4>Finalize your Masterpiece.</h4>
 			</div>
 			<div class="three">
+				<i class="fa fa-print fa-5x"></i>
 				<h4>Export to Print.</h4>
 			</div>
 	</section>
 
-	<section>
-		<h3>about us</h3>
-		
-	</section>
 </div>
 
+<div class="wrap">
+	<footer>
+		<ul>
+			<li><a href="/" class="footer_logo">four<span class="logo_bold">by</span>six  © 2014 </a></li>
+		</ul>
+	</footer>
+</div>
