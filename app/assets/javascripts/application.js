@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require angular 
+//= require angular
 //= require angular-sanitize
 
 //= require_tree .
@@ -26,14 +26,13 @@ card.filter('newlines', function($sce) {
 });
 
 card.controller("CardCtrl", ['$scope', function ($scope) {
-	$scope.color = 'black'; 
+	$scope.color = 'black';
 	$scope.fontSize = 'normal';
 	$scope.color = 'black';
 	$scope.fontFamily = 'playfair';
 	$scope.textAlign = 'left';
 
-	
+}]);
 
 
-}]);	
 
