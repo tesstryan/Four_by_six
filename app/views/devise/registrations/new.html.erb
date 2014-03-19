@@ -26,7 +26,7 @@
 
 					  <div>
 					  <%= f.hidden_field :quote_id, value: params[:quote_id] %></div>
-					  
+
 					  <div><%= f.submit "Sign up", class: "sign_button"  %></div>
 					<% end %>
 
@@ -36,3 +36,7 @@
 		</div>
 	</section>
 </div>
+
+<script>
+$("#new_user").validate();
+</script>

@@ -4,26 +4,26 @@
   <title>Four by Six</title>
   <%= stylesheet_link_tag 'application', :media => "all" %>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
   <%= javascript_include_tag "application" %>
   <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic' rel='stylesheet' type='text/css'>
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <%= csrf_meta_tags %>
 </head>
 <body ng-controller="CardCtrl">
 
-		 
+
 	 <div class="wrap">
     	<nav>
 	        <a href="/" class="nav_logo">four<span class="logo_bold">by</span>six</a>
 
 	        <%= link_to "Create Your Own", quotes_url, class: "nav_link nav_offset" %>
-	        
-	        
+
+
 	        <% if user_signed_in? %>
-				<%= link_to 'My profile', current_user, class: "nav_link" %> 
+				<%= link_to 'My profile', current_user, class: "nav_link" %>
 				<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav_link" %>
 			<% else %>
 				<%= link_to "Sign up", new_user_registration_path, class: "nav_link" %>
@@ -31,8 +31,8 @@
 			<% end %>
     	</nav>
     </div>
-		
-	
+
+
 
 	<%= yield %>
 

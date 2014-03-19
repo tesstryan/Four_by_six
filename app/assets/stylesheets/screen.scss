@@ -114,6 +114,16 @@ body {
     margin-left: ($col_width + $gutter_width) * $num_cols;
 }
 
+#error_explanation {
+  margin-top: 15%;
+  font-size: 15px;
+}
+
+.devise_error_messages {
+  font-size: 13px;
+  color: red;
+}
+
 // Everything Else
 
 // Homepage Style
