@@ -66,7 +66,14 @@ class QuotesController < ApplicationController
     @quote = Quote.find_by(id: params[:id])
     @quote.destroy
 
-    redirect_to user_url(current_user[:id]), notice: "Quote deleted."
+    respond_to do |format|
+      format.html do
+        redirect_to user_url(current_user[:id]), notice: "Quote deleted."
+      end
+      format.js
+    end
+
+
   end
 
   def download

@@ -15,7 +15,7 @@
 
 
 		<% @user.quotes.each do |quote| %>
-		<div class="box_wrap">
+		<div class="box_wrap" id="quote_<%= quote.id %>">
 
 	    <a href="<%= quote_url(quote.id) %>">
 		    <div class="card_box_profile">
@@ -26,10 +26,16 @@
 				</div>
 			</a>
 				<div class="delete">
-					<%= link_to "<i class=\'fa fa-times\'> Delete Card</i>".html_safe, quote_url(quote), method: 'delete', class: "delete_card" %>
+					<%= link_to "<i class=\'fa fa-times\'> Delete Card</i>".html_safe, quote_url(quote), method: 'delete', class: "delete_card", :remote => true, :authenticity_token => true %>
 			 </div>
 		 </div>
 
 		 <% end %>
 	</section>
 </div>
+
+
+<script type="text/javascript">
+
+
+</script>

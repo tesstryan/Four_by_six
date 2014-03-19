@@ -588,7 +588,8 @@ nav {
 
     .card_box_profile {
         display: inline-block;
-        -webkit-transform: translate(-30%, -29%) scale(0.35, 0.35);
+        -webkit-transform-origin: (4% 7%);
+        -webkit-transform: scale(0.35, 0.35);
         border: 1px solid white;
         background-color: white;
         // overflow:hidden;
