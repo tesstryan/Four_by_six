@@ -1,6 +1,6 @@
 class QuotesController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show, :new, :create, :download]
-  
+
 
   def index
     # @quotes = Quote.all
@@ -21,12 +21,12 @@ class QuotesController < ApplicationController
     @quote.template = params[:template]
     @quote.color = params[:color]
     @quote.font_size = params[:font_size]
-    @quote.font = params[:font]  
-    @quote.alignment = params[:alignment] 
+    @quote.font = params[:font]
+    @quote.alignment = params[:alignment]
     @quote.author = params[:author]
 
 
-    if current_user.present? 
+    if current_user.present?
       @quote.user_id = current_user[:id]
     end
 
@@ -50,8 +50,8 @@ class QuotesController < ApplicationController
   #   @quote.template = params[:template]
   #   @quote.color = params[:color]
   #   @quote.font_size = params[:font_size]
-  #   @quote.font = params[:font]  
-  #   @quote.alignment = params[:alignment]    
+  #   @quote.font = params[:font]
+  #   @quote.alignment = params[:alignment]
   #   @quote.author = params[:author]
   #   @quote.user_id = params[:user_id]
 
@@ -66,7 +66,7 @@ class QuotesController < ApplicationController
     @quote = Quote.find_by(id: params[:id])
     @quote.destroy
 
-    redirect_to quotes_url, notice: "Quote deleted."
+    redirect_to user_url(current_user[:id]), notice: "Quote deleted."
   end
 
   def download
@@ -75,7 +75,7 @@ class QuotesController < ApplicationController
     kit = PDFKit.new(html)
     kit.stylesheets << "#{Rails.root}/public/pdf.css"
     # kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/pdf.css"
-    send_data(kit.to_pdf, filename: "fourbysix#{@quote.id}", type: "application/pdf") 
+    send_data(kit.to_pdf, filename: "fourbysix#{@quote.id}", type: "application/pdf")
   end
 
 

@@ -12,19 +12,22 @@
 	</section>
 
     <section class="profile_layout">
-    	
-		
+
+
 		<% @user.quotes.each do |quote| %>
-		<div class="profile_columns">
-	       
-	       	<a href="<%= quote_url(quote.id) %>">
-		        <div class="card_box_profile">
+		<div class="box_wrap">
+
+	    <a href="<%= quote_url(quote.id) %>">
+		    <div class="card_box_profile">
 					<div ng-trim="false" class="<%= quote.color %> <%= quote.font_size %> <%= quote.font %> <%= quote.alignment %>">
 						<% current_quote = simple_format(quote.content) %>
-						<%= current_quote %>	
-					</div>	
+						<%= current_quote %>
+					</div>
 				</div>
-			</a>	
+			</a>
+				<div class="delete">
+					<%= link_to "<i class=\'fa fa-times\'> Delete Card</i>".html_safe, quote_url(quote), method: 'delete', class: "delete_card" %>
+			 </div>
 		 </div>
 
 		 <% end %>

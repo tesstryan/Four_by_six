@@ -10,7 +10,7 @@ $total_gutter_width: $gutter_count * $gutter_width;
 $col_width: ($max_width - $total_gutter_width) / $col_count;
 
 
-// Color Variables 
+// Color Variables
 $seafoam_nav: rgb(232, 245, 242);
 $seafoam_dark: darken(rgb(232, 245, 242), 50%);
 
@@ -23,7 +23,7 @@ $green: rgb(192, 225, 192);
 
 // Colorbox Variables
 $colorbox_width: 25px;
-$colorbox_height: 25px; 
+$colorbox_height: 25px;
 
 @font-face {
     font-family: 'sancreekregular';
@@ -121,7 +121,7 @@ body {
 .banner { position: relative; overflow: auto;
 margin-top: -10px; }
 .banner li { list-style: none; }
-    .banner ul li { float: left; 
+    .banner ul li { float: left;
     	height: 4.5in;
     	max-width: 100%;
     	text-align: center;
@@ -162,7 +162,7 @@ footer {
 
 	li {padding-top: 15px;
 		a {color: $seafoam_dark;
-			
+
 			&:link {
 				text-decoration: none;
 			}
@@ -176,15 +176,15 @@ footer {
 
 .homepage_layout {
 	font-size: 0px;
-	
+
 	h3 {
 		margin-top: 35px;
 		font-size: 50px;
 		margin-bottom: 25px;
 		color: $darkgray;
 	}
-	 
-	 div { 
+
+	 div {
 	 	display: inline-block;
 		font-size: 15px;
 		text-align: center;
@@ -226,9 +226,9 @@ footer {
 	 	margin-top: 10px;
 	 	color: $seafoam_dark;
 	 }
-	 
+
 }
-// Navigation Styling 
+// Navigation Styling
 
 
 nav {
@@ -257,7 +257,7 @@ nav {
             color: darken(rgb(232, 245, 242), 40%);
             background-color: white;
         }
-        
+
     }
 
     .nav_offset {
@@ -290,12 +290,12 @@ nav {
             }
             &:active {
                 text-decoration: none;
-                background-color: rgb(237, 237, 234); 
+                background-color: rgb(237, 237, 234);
                 padding: 5px;
             }
             &:nth-of-type(4n) {
                 margin-right: 0;
-            }       
+            }
     }
 }
 
@@ -310,8 +310,8 @@ nav {
                 &:nth-of-type(3n) {
                     margin-right: 0;
                 }
-            } 
-    
+            }
+
 
         .left_side {
             @include columnify(4);
@@ -322,7 +322,7 @@ nav {
             box-shadow: 0 0 2px fade-out(black,.4);
             display: inline-block;
             }
-        
+
         .middle {
             @include columnify(8);
             margin-right: $gutter_width;
@@ -331,7 +331,7 @@ nav {
             background:white;
             box-shadow: 0 0 2px fade-out(black,.4);
             display: inline-block;
-            }   
+            }
 
         .right_side {
             @include columnify(4);
@@ -342,7 +342,7 @@ nav {
             box-shadow: 0 0 2px fade-out(black,.4);
             display: inline-block;
             }
-           
+
 }
 
 // End Homepage Styling
@@ -360,7 +360,7 @@ nav {
           width: 350px;
           // height: 325px;
           text-align: center;
-        
+
 
         h2 {font-size: 40px;
             background-color: white;
@@ -368,7 +368,7 @@ nav {
             margin-top: -43px;
             width: 175px;
             text-align: center;
-          
+
 
         }
 
@@ -392,7 +392,7 @@ nav {
             }
 
             .sign_button {
-                color: white; 
+                color: white;
                 background-color: $seafoam_dark;
                 padding: 10px;
                 padding-right: 20px;
@@ -409,17 +409,17 @@ nav {
                 font-size: 13px;
                 line-height: 15px;
             }
-        }   
+        }
     }
 }
 
-// End sign in form style 
+// End sign in form style
 
 // Quote page styling
 
 .create_page {
     background-color: $seafoam_nav;
-    
+
 }
 
 .create_your_own {
@@ -433,14 +433,14 @@ nav {
 
 .layout {
     font-size: 0;
-   
-        
+
+
     div {
             &:nth-of-type(2n) {
                 margin-right: 0;
                 vertical-align: top;
                  }
-        } 
+        }
 
     .left_half {
         @include offset(.5);
@@ -471,22 +471,22 @@ nav {
         }
 
         .create_card_button {
-            color: white; 
+            color: white;
             background-color: $seafoam_dark;
             padding: 8px;
             padding-right: 30px;
             padding-left: 30px;
             outline: 0;
             border: 0;
-        
+
             &:hover {
-               background-color: darken($seafoam_dark, 10%);; 
+               background-color: darken($seafoam_dark, 10%);;
             }
 
         }
 
         .option_header {
-            font-style: italic; 
+            font-style: italic;
             font-size: 15px;
             color: darken($darkgray, 50%);
             margin-bottom: 6px;
@@ -504,12 +504,12 @@ nav {
         margin-bottom: 20px;
         font-size: 15px;
         display: inline-block;
-        
+
 
         .card_box {
                 // height: 384px;
                 // width: 576px;
-                height: 4in; 
+                height: 4in;
                 width: 6in;
                 border: 1px solid white;
                 padding: 8px 8px 8px 8px;
@@ -529,7 +529,7 @@ nav {
     }
 }
 
- 
+
 // End quote page styling
 
 
@@ -537,53 +537,70 @@ nav {
 
 .profile_layout {
     font-size: 0;
-    
-        .welcome_text {
-            font-size: 30px;
+
+    .welcome_text {
+        // font-size: 30px;
+    }
+
+    .gallery_text {
+        // font-size: 30px;
+        // @include columnify(16);
+        // margin-right: $gutter_width;
+        // text-align: right;
+        // margin-bottom: 20px;
+    }
+
+    .box_wrap {
+        height: 200px;
+        @include columnify(4);
+        background-color: $seafoam_nav;
+        display: inline-block;
+        // overflow: hidden;
+        margin-right: $gutter_width;
+        margin-bottom: $gutter_width;
+
+
+        &:nth-of-type(4n) {
+            margin-right: 0px;
         }
 
-        .gallery_text {
-            font-size: 30px;
-            @include columnify(16);
-            margin-right: $gutter_width;
-            text-align: right;
-            margin-bottom: 20px;
-        }
+        .delete {
+           width: 100%;
+           height: 40px;
+           margin-top: 72%;
+           position: relative;
+           text-align: center;
+           font-size: 15px;
 
-        .profile_columns {
-            height: 168px; 
-            @include columnify(4);
-            background-color: $seafoam_nav;
-            display: inline-block;
-            overflow: hidden;
-            margin-right: $gutter_width;
-            margin-bottom: $gutter_width;
+           .fa {
+            color: $seafoam_dark;
+           }
 
-            &:nth-of-type(4n) {
-                margin-right: 0px;
-            }
+          .delete_card {
+      			color: $seafoam_dark;
+
+      		}
 
         }
 
-        .card_box_profile {
-                display: inline-block;
-                -webkit-transform:scale(0.35,0.35);
-                border: 1px solid white;
-                background-color: white;
-                overflow:hidden;
-                vertical-align: top;
-                position: relative;
-                left: -174px;
-                top: -106px;
-                height: 384px;
-                padding: 8px 8px 8px 8px;
-                width: 576px;
-                word-break: normal;
-                text-align: right;
 
+    }
 
-         }  
+    .card_box_profile {
+        display: inline-block;
+        -webkit-transform: translate(-30%, -29%) scale(0.35, 0.35);
+        border: 1px solid white;
+        background-color: white;
+        // overflow:hidden;
+        // vertical-align: top;
+        position: absolute;
 
+        height: 384px;
+        padding: 8px 8px 8px 8px;
+        width: 576px;
+        word-break: normal;
+
+     }
 }
 
 
@@ -593,7 +610,7 @@ nav {
 
 
 
-// Show Page 
+// Show Page
 
 
 .page_center {
@@ -629,7 +646,7 @@ nav {
         width: 576px;
         border: 1px solid white;
         padding: 10px 8px 8px 8px;
-        word-break: normal; 
+        word-break: normal;
         margin-bottom: 20px;
         overflow: hidden;
         text-rendering: optimize-speed;
@@ -655,7 +672,7 @@ nav {
         a {
             color: white;
             font-size: 14px;
-            padding: 8px;           
+            padding: 8px;
             background-color: $seafoam_dark;
             width: 125px;
             color: white;
@@ -677,12 +694,12 @@ nav {
 
                 &:hover {
                  background-color: darken($seafoam_dark, 10%);
-                 text-decoration: none; 
+                 text-decoration: none;
                 }
         }
     }
 }
-  
+
 
 // .america { background: url("/assets/america.jpg") no-repeat;
 //     height: 438px;
@@ -797,18 +814,18 @@ nav {
 
 // Radio button styling
 
-    // 
+    //
 
 #radio_color label {
     float:left;
     width:35px;
     height: 35px;
     margin-right: 12px;
-    overflow:auto;  
+    overflow:auto;
 
     &:nth-of-type(6n) {
         margin-right: 0px;
-    } 
+    }
 }
 
 #radio_color label span {
@@ -872,7 +889,7 @@ fieldset #radio_align {
 #radio_align label {
     float:left;
     width:30px;
-    margin-right: 10px; 
+    margin-right: 10px;
 
 }
 
@@ -897,18 +914,18 @@ fieldset #radio_align {
 #radio_font label {
     float:left;
     width:60px;
-    margin-right: 5px; 
+    margin-right: 5px;
     margin-bottom: 10px;
 
     &:nth-of-type(4n) {
         margin-right: 0;
-    }    
+    }
 }
 
 #radio_font label span {
     text-align:center;
     padding:5px 8px 5px 8px;
-    
+
 }
 
 #radio_font label input {
@@ -925,13 +942,13 @@ fieldset #radio_align {
 
 #radio_fontsize label {
     display: inline-block;
-    margin-right: 15px; 
-    margin-top: -33px;    
+    margin-right: 15px;
+    margin-top: -33px;
 }
 
 #radio_fontsize label span {
     text-align:center;
-    
+
 }
 
 #radio_fontsize label input {
@@ -944,7 +961,7 @@ fieldset #radio_align {
     color:$seafoam_dark;
 }
 
-// Outline 
+// Outline
 
 // Font Radio Button Styles
 
@@ -954,13 +971,13 @@ fieldset #radio_align {
 
 //     &:nth-of-type(4n) {
 //         margin-right: 0;
-//     }    
+//     }
 // }
 
 // #radio_outline label span {
 //     text-align:center;
 //     padding:5px 8px 5px 8px;
-    
+
 // }
 
 // #radio_outline label input {
@@ -975,4 +992,4 @@ fieldset #radio_align {
 
 
 
-  
+
