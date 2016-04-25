@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-sanitize
+//= require unslider-min
 
 //= require_tree .
 
@@ -33,6 +34,3 @@ card.controller("CardCtrl", ['$scope', function ($scope) {
 	$scope.textAlign = 'left';
 
 }]);
-
-
-
